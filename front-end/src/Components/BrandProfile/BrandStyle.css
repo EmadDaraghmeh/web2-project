@@ -1,0 +1,46 @@
+.modal-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-title {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1051;
+}
+
+#collaborationOfferModal .form-control,
+#collaborationOfferModal .form-select {
+  border-color: #ff1b6d;
+}
+
+#collaborationOfferModal .btn-primary {
+  background-color: #ff1b6d;
+  border-color: #ff1b6d;
+}
+
+#collaborationOfferModal .btn-primary:hover {
+  background-color: #ff1b6d;
+  border-color: #ff1b6d;
+}
+
+#collaborationOfferModal .form-control:focus,
+#collaborationOfferModal .form-select:focus {
+  border-color: #ff1b6d;
+  box-shadow: 0 0 0 0.25rem rgba(219, 112, 147, 0.25);
+}
+
+#collaborationOfferModal .form-check-input:focus,
+#collaborationOfferModal .form-file-input:focus {
+  border-color: #ff1b6d;
+  box-shadow: 0 0 0 0.25rem rgba(219, 112, 147, 0.25);
+}
