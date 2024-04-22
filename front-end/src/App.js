@@ -1,9 +1,8 @@
-import './App.css';
+import BrandP from "./Components/BrandProfile/BrandP";
+import SignUP from "./Components/SignUp2/SignUp";
 
 function App() {
-  return (
-    <>Hello</>
-  );
+  return <SignUP />;
 }
 
 export default App;
