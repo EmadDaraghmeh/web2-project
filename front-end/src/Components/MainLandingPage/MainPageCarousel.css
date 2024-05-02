@@ -28,3 +28,10 @@
 	margin-bottom: 10px;
 	font-weight: bolder;
 }
+
+@media (max-width: 767px) {
+	.carouselCaption,
+	.carouselTitle {
+		font-size: 20px;
+	}
+}

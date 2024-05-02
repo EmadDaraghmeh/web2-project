@@ -15,6 +15,7 @@
 	margin-bottom: 0.5em;
 }
 .viewMoreButton {
+	margin-right: 10px;
 	height: 2.5em;
 	font-size: 20px;
 	border: 0;
@@ -26,6 +27,7 @@
 	border: none;
 }
 .blogTitle {
+	margin-left: 10px;
 	font-size: 40px;
 	font-weight: lighter;
 }
@@ -82,9 +84,8 @@
 }
 
 .card__title {
-	color: #5b5b5b;
+	color: #131313;
 	display: inline-block;
-	background-color: rgba(255, 255, 255, 0.6);
 	width: 95%;
 	border-radius: 10px;
 	font-size: 1 em;
@@ -115,6 +116,9 @@
 }
 
 .card__overlay-content {
+	height: 45%;
+	background-color: rgba(255, 255, 255, 0.7);
+	width: 100%;
 	position: absolute;
 	bottom: 0;
 	padding: 1.5em;
@@ -139,9 +143,26 @@
 		font-size: 0.85em;
 		font-variant: small-caps;
 		letter-spacing: 1px;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 
 		> a {
 			color: #000000;
 		}
+	}
+}
+
+@media (max-width: 767px) {
+	.site__wrapper {
+		margin-top: 5em;
+	}
+	.blogTitle {
+		font-size: 30px;
+		margin-left: 10px;
+	}
+	.viewMoreButton {
+		font-size: 15px;
+		padding: 10px;
+		padding-bottom: 35px;
+		margin-right: 10px;
 	}
 }

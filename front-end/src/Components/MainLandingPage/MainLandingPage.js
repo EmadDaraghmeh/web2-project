@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./MainLandingPage.css";
 import MainPageCarousel from "./MainPageCarousel";
 import BlogPostsCard from "./BlogPostsCard";
+import { BsFillCaretRightSquareFill } from "react-icons/bs";
 const MainLandingPage = () => {
 	const blogPostsData = [
 		{
@@ -99,7 +100,7 @@ const MainLandingPage = () => {
 	];
 	useEffect(() => {});
 	return (
-		<div>
+		<div className="parentContainer">
 			<div class="mainPageContainer">
 				<div class="content">
 					<div class="innerContainer " id="firstContainer">
@@ -117,8 +118,7 @@ const MainLandingPage = () => {
 								<button className="learnMoreButton"> Learn More </button>
 							</a>
 							<button className="watchDemoButton">
-								{" "}
-								<i className="fa fa-play-circle"></i> Watch How It Works
+								<BsFillCaretRightSquareFill id="videoIcon" /> Watch How It Works
 							</button>
 						</div>
 						<div class="image">
@@ -130,31 +130,31 @@ const MainLandingPage = () => {
 						</div>
 					</div>
 				</div>
-
-				<div className="mainPageContainer">
-					<div class="content">
-						<div class="innerContainer">
-							<div class="image">
-								<img alt="aboutUsImage" src="./images/aboutus.png"></img>
-							</div>
-							<div class="info">
-								<h2> We are InfluenBlend</h2>
-								<br />
-								<p className="mainParagraph">
-									Our mission is to provide a seamless space where influencers
-									can amplify their voices and brands can amplify their
-									messages, resulting in collaborations that resonate with
-									audiences worldwide.
-								</p>
-								<button id="aboutUsButton" className="learnMoreButton">
-									{" "}
-									Learn More{" "}
-								</button>
-							</div>
+			</div>
+			<div className="mainPageContainer">
+				<div class="content">
+					<div class="innerContainer">
+						<div class="image">
+							<img alt="aboutUsImage" src="./images/aboutus.png"></img>
+						</div>
+						<div class="info">
+							<h2> We are InfluenBlend</h2>
+							<br />
+							<p className="mainParagraph">
+								Our mission is to provide a seamless space where influencers can
+								amplify their voices and brands can amplify their messages,
+								resulting in collaborations that resonate with audiences
+								worldwide.
+							</p>
+							<button id="aboutUsButton" className="learnMoreButton">
+								{" "}
+								Learn More{" "}
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div id="howItWorksCarousel">
 				<h2 className="carouselMainTitle"> How does it work ? </h2>
 				<MainPageCarousel
@@ -273,7 +273,10 @@ const MainLandingPage = () => {
 				</div>
 			</div>
 
-			<BlogPostsCard blogPostsData={blogPostsData}></BlogPostsCard>
+			<BlogPostsCard
+				className="blogPosts"
+				blogPostsData={blogPostsData}
+			></BlogPostsCard>
 			<div className="qaDiv">
 				<div>
 					<h3>Have any questions?</h3>
