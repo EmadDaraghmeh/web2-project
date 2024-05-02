@@ -1,5 +1,5 @@
 import React from 'react';
-import 'C:/Users/ASUS/Desktop/Web2/src/componenets/Offers.css';
+import '../Offers.css';
 import restaurantImage from '../img/Screenshot 2024-04-26 191047.png';
 
 function OfferCard() {
@@ -23,5 +23,5 @@ function OfferCard() {
   );
 }
 
-export default OfferCard;
+export default OfferCard;
 
