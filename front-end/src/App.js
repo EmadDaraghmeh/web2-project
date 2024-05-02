@@ -3,13 +3,13 @@
 
 import InfluencerHome from "./Components/LoadingInfluencerPage/InfluencerHome";
 import InfluencerNavbar from "./Components/LoadingInfluencerPage/InfluencerNavbar";
+import MainLandingPage from "./Components/MainLandingPage/MainLandingPage";
 
 function App() {
   return( 
   // <SignUP />
   <div className="app">
-    <InfluencerNavbar/>
-    <InfluencerHome/>
+    <MainLandingPage></MainLandingPage>
   </div>
 )}
 
