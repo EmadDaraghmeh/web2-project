@@ -6,7 +6,7 @@ const SignUp = () => {
   const [inputLabel, setInputLabel] = useState("Website URL");
 
   const handleInputLabelChange = (platform) => {
-    setInputLabel(`Enter your ${platform} account`);
+    setInputLabel(`Enter your ${platform} account link`);
   };
 
   return (
