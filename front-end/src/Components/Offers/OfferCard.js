@@ -23,5 +23,5 @@ function OfferCard() {
   );
 }
 
-export default OfferCard;
+export default OfferCard;
 
