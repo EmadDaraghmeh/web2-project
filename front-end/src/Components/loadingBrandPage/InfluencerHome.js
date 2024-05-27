@@ -45,15 +45,15 @@ const InfluencerHome = () => {
     <ColoratedButtons></ColoratedButtons>
    </div>
    {/* another code */}
-   <div class="rental-process spline">
-    <div class="row">
-        <div class="large-10 large-centered columns">
-          <h1 class="text-center">How does it work?</h1>
+   <div className="rental-process spline">
+    <div className="row">
+        <div className="large-10 large-centered columns">
+          <h1 className="text-center">How does it work?</h1>
           <p>with the help of our website you can easily collaborate with Brands</p>
-          <div class="wrapper">
-            <div class="circles no-bullet text-center">
+          <div className="wrapper">
+            <div className="circles no-bullet text-center">
               <div className='step-container'>
-                <label class="step float-left" for="slide-1-content" id="step-1" style={{backgroundColor:"red"}}>1</label>
+                <label className="step float-left" for="slide-1-content" id="step-1" style={{backgroundColor:"red"}}>1</label>
                 
                 <div className='step-content'> 
                   <h3>Find On Brands </h3>
@@ -69,7 +69,7 @@ const InfluencerHome = () => {
               </div>
               <img src='./images/line2.png' alt='' className='line'/>
               <div className='step-container'>
-                <label class="step" for="slide-2-content" id="step-2" style={{backgroundColor:"green"}}>2</label>
+                <label className="step" for="slide-2-content" id="step-2" style={{backgroundColor:"green"}}>2</label>
                 <div className='step-content'>
                   <h3>Contact the Brands</h3>
                   <p>contact them through our chat system </p>
@@ -90,8 +90,8 @@ const InfluencerHome = () => {
         </div>
       </div>
       {/* end of the about us */}
-      <div class="pricing-container">
-          <div class="pricing">
+      <div className="pricing-container">
+          <div className="pricing">
           <h4>Upgrade to a Pro Account</h4>
           <p>Ready to take your influencer journey to the next level?<br/> With a Pro Account, you'll gain access to unlimited collaborations,<br/> giving you the freedom to work with as many brands as you desire.<br/>our Pro Account ensures you never miss out on valuable opportunities. <br/>Elevate your  presence with brands and maximize your influence by upgrading to a Pro Account today!</p>
           </div>
@@ -103,12 +103,12 @@ const InfluencerHome = () => {
           </div>
         
       </div>
-      <div class="at-banner">
-        <div class="at-banner__content">
-          <h1 class="at-banner__text">Have any questions ?</h1>
+      <div className="at-banner">
+        <div className="at-banner__content">
+          <h1 className="at-banner__text">Have any questions ?</h1>
           <p>Our team is here to support your journey in finding the right brand partnerships.<br/> Get in touch for personalized assistance.</p>
         </div>
-        <div class="at-banner__close">
+        <div className="at-banner__close">
           <button>Write To Us<img src='./images/send.png' alt='' className='send'/></button>
         </div>
       </div>

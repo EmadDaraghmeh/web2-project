@@ -1,4 +1,4 @@
-.site__wrapper {
+.siteWrapper {
 	margin-top: 10em;
 	max-width: 1200px;
 	margin-left: auto;
@@ -15,6 +15,7 @@
 	margin-bottom: 0.5em;
 }
 .viewMoreButton {
+	margin-right: 10px;
 	height: 2.5em;
 	font-size: 20px;
 	border: 0;
@@ -26,17 +27,9 @@
 	border: none;
 }
 .blogTitle {
+	margin-left: 10px;
 	font-size: 40px;
 	font-weight: lighter;
-}
-.site__info {
-	clear: both;
-	display: block;
-	font-variant: small-caps;
-	letter-spacing: 2px;
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
-	text-align: center;
 }
 
 .grid {
@@ -52,7 +45,7 @@
 	}
 }
 
-.card__image {
+.cardImage {
 	border-radius: 3px;
 	display: block;
 	height: 280px;
@@ -81,10 +74,9 @@
 	}
 }
 
-.card__title {
-	color: #5b5b5b;
+.cardTitle {
+	color: #131313;
 	display: inline-block;
-	background-color: rgba(255, 255, 255, 0.6);
 	width: 95%;
 	border-radius: 10px;
 	font-size: 1 em;
@@ -99,7 +91,7 @@
 	text-align: center;
 }
 
-.card__overlay {
+.cardOverlay {
 	content: "";
 	bottom: 0;
 	display: block;
@@ -114,18 +106,21 @@
 	justify-content: center;
 }
 
-.card__overlay-content {
+.cardOverlayContent {
+	height: 45%;
+	background-color: rgba(255, 255, 255, 0.7);
+	width: 100%;
 	position: absolute;
 	bottom: 0;
 	padding: 1.5em;
 	z-index: 3;
 }
 
-.card__meta {
+.cardMeta {
 	text-align: center;
 	margin-bottom: 0.75em;
 
-	&.card__meta--last {
+	&.cardMetaLast {
 		margin-bottom: 0;
 	}
 
@@ -139,9 +134,26 @@
 		font-size: 0.85em;
 		font-variant: small-caps;
 		letter-spacing: 1px;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 
 		> a {
 			color: #000000;
 		}
+	}
+}
+
+@media (max-width: 767px) {
+	.siteWrapper {
+		margin-top: 5em;
+	}
+	.blogTitle {
+		font-size: 30px;
+		margin-left: 10px;
+	}
+	.viewMoreButton {
+		font-size: 15px;
+		padding: 10px;
+		padding-bottom: 35px;
+		margin-right: 10px;
 	}
 }
