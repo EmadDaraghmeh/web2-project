@@ -1,6 +1,9 @@
 .mainPageContainer {
-	margin-right: 50px;
-	margin-left: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: 40px;
+	margin-left: 40px;
+	padding: 0;
 }
 .learnMoreButton {
 	font-size: 20px;
@@ -118,19 +121,24 @@
 	margin-top: 5px;
 }
 #ourValuesImage {
-	height: 600px;
-	width: auto;
+	height: auto;
+	width: 100%;
 }
 #aboutUsButton {
 	float: right;
 }
 .watchDemoButton {
+	text-align: center;
 	padding: 12px 30px;
 	border-radius: 15px;
 	background-color: transparent;
 	border-color: #000;
 	font-weight: bolder;
 	font-size: 20px;
+}
+#videoIcon {
+	margin-bottom: 5px;
+	margin-right: 5px;
 }
 
 .image img {
@@ -190,7 +198,6 @@
 }
 .writeToUsButton {
 	height: 2.5em;
-	width: 9em;
 	font-size: 20px;
 	border: 0;
 	border-radius: 15px;
@@ -211,12 +218,87 @@
 }
 
 @media (max-width: 767px) {
-	.innerContainer {
+	.checkoutContainer {
+		margin-top: 30px;
+	}
+
+	#firstImageBrand {
+		height: 100px;
+		width: 100px;
+		margin-left: 6px;
+		margin-top: -5px;
+	}
+	#secondImageBrand {
+		height: 70px;
+		width: 70px;
+		margin-left: -100px;
+		margin-bottom: -200px;
+	}
+	#firstImage {
+		margin-top: -10px;
+		margin-left: 15px;
+	}
+	#secondImage {
+		margin-left: 40px;
+		margin-right: 40px;
+		margin-top: 5px;
+	}
+	#thirdImage {
+		margin-left: 10px;
+		margin-top: 10px;
+		margin-bottom: -28px;
+	}
+	.ourValuesInnerContainer {
+		display: flex;
+		flex-direction: column;
+	}
+	.carouselMainTitle {
+		font-size: 30px;
+	}
+	.mainPageContainer:nth-of-type(2) #aboutUsButton {
+		display: block;
+		margin-right: 85px;
+		width: 50%;
+	}
+	.learnMoreButton,
+	.watchDemoButton {
+		font-size: clamp(12px, 4vw, 18px);
+		padding: 10px 20px;
+		margin-bottom: 15px;
+	}
+	.learnMoreButton {
+		margin-left: 10px;
+	}
+	.mainPageContainer {
+		margin-left: 0;
+		margin-right: 0;
+		padding: 0 10px;
+	}
+
+	.mainPageContainer:first-of-type .innerContainer {
+		margin-right: 50px;
 		flex-direction: column-reverse;
+	}
+
+	.image img {
+		width: 100%;
+	}
+
+	.info {
+		text-align: center;
+	}
+
+	.qaDiv {
+		margin-left: 1em;
+		margin-right: 1em;
+		padding: 1em;
+		justify-content: center;
+	}
+	.innerContainer {
+		flex-direction: column;
 		align-items: center;
 		gap: 20px;
 		padding: 20px 10px;
-		min-height: auto;
 	}
 
 	.info {
@@ -225,38 +307,47 @@
 		width: 100%;
 	}
 
-	#topTitle,
-	#mainTitle,
-	.info p {
-		font-size: clamp(12px, 4vw, 18px);
+	.image img {
+		width: 100%;
+		height: auto;
 	}
 
-	.learnMoreButton,
-	.watchDemoButton {
-		padding: 10px 20px;
-		font-size: 14px;
+	.checkoutContainer {
+		flex-direction: column;
+		gap: 20px;
+		padding: 10px;
+	}
+
+	.influencerContainer,
+	.brandContainer {
+		width: 100%;
+		padding: 20px;
+		max-height: none;
+	}
+
+	.imagesSection img {
+		width: 80px;
+		height: 80px;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-	#topTitle {
-		font-size: 20px;
+	.mainPageContainer:first-of-type .innerContainer {
+		flex-direction: column-reverse;
 	}
-
-	#mainTitle {
-		font-size: 40px;
-	}
-
 	.info p {
-		font-size: 18px;
+		font-size: clamp(16px, 3vw, 18px);
 	}
 
-	.container {
-		gap: 50px;
+	.learnMoreButton,
+	.watchDemoButton {
+		font-size: clamp(14px, 3vw, 18px);
+		padding: 10px 20px;
 	}
 
 	.image img {
-		min-width: 50%;
+		width: auto;
+		max-width: 100%;
 	}
 }
 

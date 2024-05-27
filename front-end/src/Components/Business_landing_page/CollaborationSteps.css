@@ -1,0 +1,180 @@
+:root {
+	--primary-color: #ff1b6d;
+	--secondary-color: #ffb8cc;
+	--tertiary-color: #ffe0f7;
+	--text-color: #000000;
+	--text-muted: #030405;
+	--border-radius: 16px;
+	--transition-duration: 0.4s;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+}
+
+#TTL {
+	margin-bottom: 2.5rem;
+	color: var(--primary-color);
+	text-align: center;
+	font-weight: 800;
+	font-size: 3rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#SSSCC {
+	max-width: 800px;
+	margin: 3rem auto;
+	padding: 2rem;
+	background: linear-gradient(
+		to right,
+		var(--secondary-color),
+		var(--tertiary-color)
+	);
+	border-radius: var(--border-radius);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.steps {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.steps li {
+	background: var(--secondary-color);
+	padding: 1.5rem 2.5rem;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: background-color var(--transition-duration);
+}
+
+.steps li.active {
+	background: var(--primary-color);
+	color: #ffffff;
+	transform: translateY(-8px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.detail {
+	max-width: 600px;
+	margin: 2rem auto;
+	padding: 2.5rem;
+	background: linear-gradient(
+		to right,
+		var(--tertiary-color),
+		var(--primary-color)
+	);
+	border-radius: var(--border-radius);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+	transition: all var(--transition-duration);
+	opacity: 0;
+	transform: scale(0.95);
+	display: none;
+}
+
+#DDDTTTT {
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+	color: var(--text-color);
+	font-size: 2rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#DTDTD {
+	margin: 2rem 0;
+	color: var(--text-muted);
+	line-height: 1.8;
+}
+
+.actions {
+	text-align: center;
+}
+
+.collaborationStepsButton {
+	width: 140px;
+	background: var(--primary-color);
+	color: #ffffff;
+	border: none;
+	border-radius: 30px;
+	padding: 1.5rem 2.5rem;
+	margin: 1rem;
+	cursor: pointer;
+	transition: box-shadow var(--transition-duration);
+}
+
+.collaborationStepsButton:hover {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#CLLLL {
+	text-align: center;
+	color: var(--text-color);
+	font-size: 1.2rem;
+	line-height: 1.6;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.detail:not(.hidden) {
+	display: block;
+	opacity: 1;
+	transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+	#TTL {
+		font-size: 2.5rem;
+	}
+
+	#SSSCC,
+	.detail {
+		padding: 1.5rem;
+		max-width: 90%;
+	}
+
+	.steps li {
+		padding: 1rem 1.5rem;
+	}
+
+	.collaborationStepsButton {
+		width: 120px;
+		padding: 1rem 1.5rem;
+	}
+
+	.clpar {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.steps {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.steps li {
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+
+	.collaborationStepsButton {
+		width: 100%;
+		padding: 1rem 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	#TTL {
+		font-size: 2rem;
+	}
+
+	#DDDTTTT {
+		font-size: 1.5rem;
+	}
+
+	#DTDTD {
+		font-size: 1rem;
+	}
+}
