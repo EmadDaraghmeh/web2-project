@@ -1,0 +1,117 @@
+.brandSignUpContainer {
+	padding-left: 75px;
+	padding-right: 75px;
+}
+#Custom-input1,
+#Custom-select2 {
+	background-color: #faf2f8;
+	border: 1px solid #ff1b6d;
+	border-radius: 5px;
+	padding: 10px;
+	font-family: "Arial", sans-serif;
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 15px;
+}
+
+#Custom-select2 {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	background-size: 12px;
+	cursor: pointer;
+}
+
+#Btnn1,
+#Btnn2 {
+	padding: 10px 30px;
+	font-size: 16px;
+	border-radius: 10px;
+	border: 2px solid transparent;
+	transition: background-color 0.5s, color 0.5s;
+}
+
+#Btnn1 {
+	background-color: #faf2f8;
+	color: #000000;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-right: 1450px;
+	border-color: #ff1b6d;
+}
+
+#Btnn2 {
+	background-color: #ff1b6d;
+	color: white;
+	border-color: #ff1b6d;
+}
+
+#Btnn1,
+#Btnn2:hover {
+	background-color: #ff1b6d;
+	color: white;
+}
+
+#Terms-Text11 {
+	font-size: 20px;
+	color: #000000;
+	padding-left: 180px;
+	padding-right: 180px;
+}
+
+#Terms-Link11,
+#Terms-Highlight11 {
+	font-weight: bold;
+	color: #ff1b6d;
+}
+
+#Terms-Link11 {
+	color: #ff1b6d;
+}
+
+@media (max-width: 768px) {
+	#Row44 {
+		flex-direction: column;
+	}
+
+	#Col44 {
+		width: 100%;
+		padding: 0;
+	}
+
+	#Btnn1 {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+
+	#Formss55,
+	#Terms-Text11 {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+
+	#Terms-Text11,
+	#Form-Buttons12 {
+		text-align: center;
+	}
+
+	#Custom-input1,
+	#Custom-select2 {
+		width: 100%;
+	}
+}
+
+#Row44 {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 5px;
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+#Col44 {
+	flex: 1;
+	padding: 5px;
+}

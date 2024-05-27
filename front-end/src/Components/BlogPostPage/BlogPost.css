@@ -1,0 +1,154 @@
+.blog-posts{
+    background-color: white;
+    margin-top: 10px; 
+      margin-bottom: 30px; 
+      margin-left: 700px; 
+      margin-right: 700px; 
+}
+
+.blog-posts .written-by-john-doe {
+    margin-right: 11px;
+    width: 192px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    color:  #2D3748;
+  }
+  .blog-posts .monday-may-20 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    color:  #718096;
+  }
+  .blog-posts .line-2 {
+    background: #E8E7E7;
+    position: absolute;
+   margin-right: 100px;
+    top: 649.5px;
+    width: 760px;
+    height: 1px;
+  }
+  .blog-posts .picture {
+    margin-bottom: 41.6px;
+    width: 1216.3px;
+    height: 380.4px;
+  }
+  .blog-posts {
+    
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 109px 112.5px 517px 111.3px;
+    width: 1440px;
+    box-sizing: border-box;
+    margin-right:-100 px;
+
+  }
+  
+  .blog-posts .finibus-bonorum-et-malorum {
+    margin: 0 423.5px 11px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 45px;
+    color:  #2D3748;
+  }
+  .blog-posts .container {
+    margin: 0 710.3px 31px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 344.4px;
+    box-sizing: border-box;
+  }
+
+
+  .paragraph1 {
+    font-size: 30px;
+    color: #718096;
+    justify-content: left;
+    display: block;
+  margin-left: 15px;
+  font-family: 'Inter';
+  margin-bottom: 20px;
+  line-height: 0.9;
+  }
+  
+  .paragraph2{
+
+    font-size: 30px;
+    color: #718096;
+    justify-content: left;
+    display: block;
+  margin-left: 15px;
+  font-family: 'Inter';
+  line-height: 0.9;
+  margin-bottom: 20px;
+
+  }
+  .Heading1{
+    margin-right: 7.5px;
+    width: 430.9px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    white-space: nowrap;
+    margin-bottom: 30px;
+
+  }
+  .paragraph3{
+    font-size: 30px;
+    color: #718096;
+    justify-content: left;
+    display: block;
+  margin-left: 15px;
+  font-family: 'Inter';
+  line-height: 0.9;
+margin-bottom: 30px;
+
+  }
+  .Heading2{
+    margin-right: 20px;
+    width: 430.9px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+   margin-bottom: 30px ;
+  }
+  .paragraph4{
+    font-size: 30px;
+    color: #718096;
+    justify-content: left;
+    display: block;
+  margin-left: 15px;
+  font-family: 'Inter';
+  line-height: 0.9;
+margin-bottom: 30px;
+  }
+  .Heading3{
+    margin-right: 20px;
+    width: 430.9px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+margin-bottom: 30px;
+  }
+  .paragraph5{
+    font-size: 30px;
+    color: #718096;
+    justify-content: left;
+    display: block;
+  margin-left: 15px;
+  font-family: 'Inter';
+
+  }

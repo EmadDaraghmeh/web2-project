@@ -1,22 +1,25 @@
 import React from "react";
 import "./BlogPostsCard.css";
+import { Link } from "react-router-dom";
 const BlogPostsCard = (props) => {
 	return (
-		<div class="site__wrapper">
+		<div className="siteWrapper">
 			<div className="titleDiv">
 				<h2 className="blogTitle"> Blog Posts </h2>
-				<button className="viewMoreButton"> View More </button>
+				<Link to={"/Blog"}>
+					<button className="viewMoreButton"> View More </button>
+				</Link>
 			</div>
 			{props.blogPostsData.map((item) => {
 				return (
 					<div class="grid">
 						<div class="card">
-							<div class="card__image">
+							<div class="cardImage">
 								<img src={item.image} alt="" />
 
-								<div class="card__overlay">
-									<div class="card__overlay-content">
-										<ul class="card__meta">
+								<div class="cardOverlay">
+									<div class="cardOverlayContent">
+										<ul class="cardMeta">
 											<li>
 												<a href="#0">
 													<i class="fa fa-tag"></i> {item.tag}
@@ -29,11 +32,11 @@ const BlogPostsCard = (props) => {
 											</li>
 										</ul>
 
-										<a href="#0" class="card__title">
+										<a href="#0" class="cardTitle">
 											{item.title}
 										</a>
 
-										<ul class="card__meta card__meta--last"></ul>
+										<ul class="cardMeta cardMetaLast"></ul>
 									</div>
 								</div>
 							</div>

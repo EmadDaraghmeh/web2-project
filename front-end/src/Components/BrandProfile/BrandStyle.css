@@ -1,9 +1,9 @@
-.img-fluid {
+#thumbnail1 {
   width: 100%;
   height: 250px;
 }
 
-.img-thumbnail {
+#thumbnail2 {
   margin-top: -50px;
   margin-left: 40px;
   border-radius: 50px;
@@ -14,11 +14,12 @@
 #description {
   border-color: white;
   background-color: white;
-  height: 100px;
+  height: auto;
+  min-height: 100px;
   width: 50%;
-  margin-left: 130px;
-  margin-top: 0px;
-  margin-bottom: 1px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 label {
@@ -26,12 +27,17 @@ label {
   color: gray;
 }
 
-.boxx {
+.textbox {
+  justify-content: start;
   display: flex;
-  justify-content: flex-end;
+  margin-left: 52px;
+}
+
+.boxxx {
+  display: flex;
+  justify-content: start;
   margin-top: -80px;
-  margin-left: -70px;
-  flex-wrap: wrap;
+  margin-right: 7%;
 }
 
 .button-container {
@@ -48,14 +54,23 @@ label {
   margin-bottom: 10px;
 }
 
-#btn1,
+#btn1 {
+  width: 177px;
+  border-radius: 10px;
+  background-color: #ff1b6d;
+  margin-top: 5px;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
 #btn2,
 #btn3 {
   width: 150px;
   border-radius: 10px;
   background-color: #ff1b6d;
   margin-top: 5px;
-  margin-left: 40px;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 #btn1:hover,
@@ -64,65 +79,36 @@ label {
   background-color: palevioletred !important;
 }
 
-hr {
-  border: none;
-  height: 2px;
-  background-color: #333;
-  width: 90%;
-  margin: 20px auto;
+.d-block {
+  height: 400px;
 }
 
 .posts-title,
 .links-title {
-  margin-left: 5%;
   font-size: 30px;
+  font-style: italic;
+  color: gray;
 }
 
-.carousel-card {
-  width: 85%;
-  height: 70vh;
-  margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid #ff1b6d;
-}
-
-.carousel .carousel-item img {
+.carousel {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
-  color: #ff1b6d;
+.carousel-inner {
+  height: 400px;
+  border-radius: 20px;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-image: none;
+@media (max-width: 768px) {
+  .carousel {
+    max-width: 90%;
+  }
 }
 
-.carousel-control-prev-icon::before,
-.carousel-control-next-icon::before {
-  content: "";
-  display: inline-block;
-  border: solid #ff1b6d;
-  border-width: 0 3px 3px 0;
-  padding: 3px;
-}
-
-.carousel-control-prev-icon::before {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
-
-.carousel-control-next-icon::before {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+@media (max-width: 480px) {
+  .carousel {
+    max-width: 100%;
+  }
 }
 
 .modal-header {
@@ -172,15 +158,17 @@ hr {
   box-shadow: 0 0 0 0.25rem rgba(219, 112, 147, 0.25);
 }
 
-.social-buttons {
+#social-b {
   display: flex;
   justify-content: flex-start;
   margin-top: 20px;
-  margin-left: 5%;
-  margin-bottom: 20px;
+  margin-left: 0%;
+  margin-bottom: 30px;
 }
 
-.btn-custom {
+#b-instagram {
+  background-color: #c13584;
+  border-color: #c13584;
   margin: 2px 10px 2px 0;
   width: 70px;
   height: 70px;
@@ -190,64 +178,110 @@ hr {
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  font-size: 25px;
 }
-
-.btn-instagram {
-  background-color: #c13584;
-  border-color: #c13584;
-}
-.btn-instagram:hover {
+#b-instagram:hover {
   background-color: #ffffff;
   color: #c13584;
   border-color: #000000;
 }
 
-.btn-facebook {
+#b-facebook {
   background-color: #3b5998;
   border-color: #3b5998;
+  margin: 2px 10px 2px 0;
+  width: 70px;
+  height: 70px;
+  transition: background-color 0.3s, border-color 0.3s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 25px;
 }
-.btn-facebook:hover {
+#b-facebook:hover {
   background-color: #ffffff;
   color: #3b5998;
   border-color: #000000;
 }
 
-.btn-tiktok {
+#b-tiktok {
   background-color: #000000;
   border-color: #000000;
+  margin: 2px 10px 2px 0;
+  width: 70px;
+  height: 70px;
+  transition: background-color 0.3s, border-color 0.3s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 25px;
 }
-.btn-tiktok:hover {
+#b-tiktok:hover {
   background-color: #ffffff;
   color: #000000;
   border-color: #000000;
 }
 
-.btn-snapchat {
+#b-snapchat {
   background-color: #fffc00;
   border-color: #fffc00;
   color: #000000;
+  margin: 2px 10px 2px 0;
+  width: 70px;
+  height: 70px;
+  transition: background-color 0.3s, border-color 0.3s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 25px;
 }
-.btn-snapchat:hover {
+#b-snapchat:hover {
   background-color: #ffffff;
   color: #fffc00;
   border-color: #000000;
 }
 
-.btn-youtube {
+#b-youtube {
   background-color: #ff0000;
   border-color: #ff0000;
+  margin: 2px 10px 2px 0;
+  width: 70px;
+  height: 70px;
+  transition: background-color 0.3s, border-color 0.3s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 25px;
 }
-.btn-youtube:hover {
+#b-youtube:hover {
   background-color: #ffffff;
   color: #ff0000;
   border-color: #000000;
 }
 
-.btn-x {
+#b-x {
   background-color: #000000;
   border-color: #000000;
+  margin: 2px 10px 2px 0;
+  width: 70px;
+  height: 70px;
+  transition: background-color 0.3s, border-color 0.3s;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 25px;
 }
-.btn-x:hover {
+#b-x:hover {
   background-color: #ffffff;
   color: #000000;
   border-color: #000000;

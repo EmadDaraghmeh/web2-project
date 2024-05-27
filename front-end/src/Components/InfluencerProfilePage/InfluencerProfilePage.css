@@ -1,0 +1,396 @@
+#card1{
+    background-color:whitesmoke !important;
+        width: 350px !important;
+        height: 120px;
+        flex-wrap: wrap;
+        justify-content: center;
+        display:inline-flex;
+        margin-left: 15px;
+        margin-top: 10px;
+    border-radius: 20px;
+    border-color: #ff1b6d;
+    }
+    
+    
+    #card2{
+      background-color:whitesmoke !important;
+          width: 350px !important;
+          height: 120px;
+          flex-wrap: wrap;
+          justify-content: center;
+          display:inline-flex;
+          margin-left: 15px;
+          margin-top: 10px;
+      border-radius: 20px;
+      border-color: #ff1b6d;
+      }
+    
+      #card3{
+        background-color:whitesmoke !important;
+            width: 350px !important;
+            height: 120px;
+            flex-wrap: wrap;
+            justify-content: center;
+            display:inline-flex;
+            margin-left: 15px;
+            margin-top: 10px;
+        border-radius: 20px;
+        border-color: #ff1b6d;
+        }
+    
+        
+        #card4{
+          background-color:whitesmoke !important;
+              width: 350px !important;
+              height: 120px;
+              flex-wrap: wrap;
+              justify-content: center;
+              display:inline-flex;
+              margin-left: 15px;
+              margin-top: 10px;
+          border-radius: 20px;
+          border-color: #ff1b6d;
+          }
+    
+          #card5{
+            background-color:whitesmoke !important;
+                width: 350px !important;
+                height: 120px;
+                flex-wrap: wrap;
+                justify-content: center;
+                display:inline-flex;
+                margin-left: 15px;
+                margin-top: 10px;
+            border-radius: 20px;
+            border-color: #ff1b6d;
+            }
+    
+            #card6{
+              background-color:whitesmoke !important;
+                  width: 350px !important;
+                  height: 120px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  display:inline-flex;
+                  margin-left: 15px;
+                  margin-top: 10px;
+              border-radius: 20px;
+              border-color: #ff1b6d;
+              }
+        
+          
+     .analysis{
+        display: flex;
+        /* flex-direction: row; */
+    } 
+    
+    #instagram{
+        color: #ff1b6d;
+        font-size: 25px;
+    }
+    
+    #twitter{
+      font-size: 25px;
+    }
+    #tiktok{
+      font-size: 25px;
+    }
+    #facebook{
+        color:blue;
+        font-size: 25px;
+    }
+    
+    #snapchat{
+        color:yellow;
+      font-size: 25px;
+    }
+    
+    #youtube{
+        color: red;
+       font-size: 25px;
+    }
+    
+    #description{
+        border-color:white;
+        background-color: white;
+        height: 150px;
+       width: 50%;
+       margin-left: 130px;
+     
+    }
+    #p{
+      position: relative;
+      width: 350px;;
+    }
+
+    .container-icons{
+      display: flex;
+      flex-wrap: wrap;
+     
+    }
+    #labell{
+        font-style: italic;
+        color: gray;
+    }
+    
+    #card-title1{
+        color:gray;
+        font-size:x-large;
+        font-style: italic;
+        margin-left: 15px;
+        
+    }
+    
+    #card-title2{
+      color:gray;
+      font-size:x-large;
+      font-style: italic;
+      margin-left: 15px;
+      
+     
+    }
+    #card-title3{
+      color:gray;
+      font-size:x-large;
+      font-style: italic;
+      margin-left: 15px;
+      
+     
+    }
+    #card-title4{
+      color:gray;
+      font-size:x-large;
+      font-style: italic;
+      margin-left: 15px;
+      
+     
+    }
+    #card-title5{
+      color:gray;
+      font-size:x-large;
+      font-style: italic;
+      margin-left: 15px;
+      
+     
+    }
+    #card-title6{
+      color: gray !important;
+      font-size:x-large;
+      font-style: italic;
+      margin-left: 15px;
+      
+     
+    }
+    
+    
+    
+    
+    .boxx{
+       
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -50px;
+        margin-left: -70px;
+        flex-wrap: wrap;
+    }
+    .container{
+      
+      flex-wrap: wrap;
+    }
+    @media (max-width:768px) {
+      .boxx{
+        flex-direction: column;
+        height: 60vh;
+      }
+      #description{
+        display: flex;
+        justify-content: flex-start;
+        
+      }
+      #description p{
+        width: 100%;
+      }
+    }
+    .Posts{
+        font-style: italic;
+        color: gray !important;
+    }
+    
+    .username{
+        margin-left:5px ;
+    }
+    
+    #img-fluid1{
+        display: flex;
+        width:100%;
+        height: 200px;
+        display:flex ;
+    
+    }
+    
+    #img-thumbnail2{
+        margin-top: -50px;
+       
+        border-radius: 50px;
+        width:100px;
+        height: 100px;
+    }
+    
+    
+    #btn1{
+       font-size: 15px;
+        width:150px;
+        border-radius: 10px;
+        background-color: #ff1b6d;
+        margin-top: 5px;
+        margin-left:40px;
+    
+    }
+    
+    #btn2{
+       
+      width:150px;
+      border-radius: 10px;
+      background-color: #ff1b6d;
+      margin-top: 5px;
+      margin-left:40px;
+    
+    }
+    #btn3{
+       
+      width:150px;
+      border-radius: 10px;
+      background-color: #ff1b6d;
+      margin-top: 5px;
+      margin-left:40px;
+    
+    }
+    #btn4{
+       
+      width:150px;
+      border-radius: 10px;
+      background-color: #ff1b6d;
+      margin-top: 5px;
+      margin-left:40px;
+    
+    }
+    
+    #btn1:hover{
+      background-color:white !important;
+      color:  #ff1b6d;
+    }
+    
+    #btn2:hover{
+      background-color:white !important;
+    color:  #ff1b6d;
+    }
+    
+    #btn3:hover{
+      background-color:white !important;
+    color:  #ff1b6d;
+    }
+    
+    #btn4:hover{
+      background-color:white !important;
+    color:  #ff1b6d;
+    }
+
+  .d-block{
+    height: 400px;
+  }
+    
+    .carousel{
+        width:100%;
+        height: 400px;
+       
+         
+    }
+    .carousel-inner{
+        margin-top: 20px;
+        height: 400px;
+        border-radius: 20px 20px 20px 20px;
+        
+    }
+    
+    #social{
+        margin-block: auto;
+    }
+    
+    
+    
+    .btn-primary.btn-custom {
+        margin: 2px;
+        width: 50px;
+        height: 50px;
+        white-space: nowrap;
+        flex: 0 0 auto;
+        transition: background-color 0.3s, border-color 0.3s;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .btn-primary.btn-instagram {
+        background-color: #c13584;
+        border-color: #c13584;
+      }
+      .btn-primary.btn-instagram:hover {
+        background-color: #ffffff;
+        color: #c13584;
+        border-color: #000000;
+      }
+      
+      .btn-primary.btn-facebook {
+        background-color: #3b5998;
+        border-color: #3b5998;
+      }
+      .btn-primary.btn-facebook:hover {
+        background-color: #ffffff !important;
+        color: #3b5998 !important;
+        border-color: #000000 !important;
+      }
+      
+      .btn-primary.btn-tiktok {
+        background-color: #000000;
+        border-color: #000000;
+      }
+      .btn-primary.btn-tiktok:hover {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border-color: #000000!important;
+      }
+      
+      .btn-primary.btn-snapchat {
+        background-color: #fffc00;
+        border-color: #fffc00;
+        color: #000000;
+      }
+      .btn-primary.btn-snapchat:hover {
+        background-color: #ffffff;
+        color: #fffc00;
+        border-color: #000000;
+      }
+      
+      .btn-primary.btn-youtube {
+        background-color: #ff0000;
+        border-color: #ff0000;
+      }
+      .btn-primary.btn-youtube:hover {
+        background-color: #ffffff;
+        color: #ff0000;
+        border-color: #000000;
+      }
+      
+      .btn-primary.btn-x {
+        background-color: #000000;
+        border-color: #000000;
+      }
+      .btn-primary.btn-x:hover {
+        background-color: #ffffff;
+        color: #000000;
+        border-color: #000000;
+      }
+    
+    
+    
