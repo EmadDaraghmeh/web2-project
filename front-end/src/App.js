@@ -8,7 +8,7 @@ import MainLandingPage from "./Components/MainLandingPage/MainLandingPage";
 import Footer from "./Components/Footer/Footer";
 import DeleteAccountForm from "./Components/DeleteAccountSettings/DeleteAccountForm";
 import InfluenBlend from "./Components/AboutPage/InfluenBlend";
-import SignUpInfluencer from "./Components/SignUpInfluencer/SignUpInfluencer";
+// import SignUpInfluencer from "./Components/SignUpInfluencer/SignUpInfluencer";
 import SignUp from "./Components/SignUp2/SignUp";
 import InfluencerHome from "./Components/loadingBrandPage/InfluencerHome";
 import ContactUs from "./Components/ContactUs/ContactUs";
@@ -68,7 +68,7 @@ function App() {
 							</div>
 						}
 					/>
-					<Route path="/InfluencerSignUp" element={<SignUpInfluencer />} />
+					{/* <Route path="/InfluencerSignUp" element={<SignUpInfluencer />} /> */}
 					<Route path="/BrandSignUp" element={<Signupbrand />} />
 					<Route
 						path="/Home"

@@ -1,14 +1,29 @@
 {
-  "name": "back-end",
+  "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "this is the backend for our influencer marketing website",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmadDaraghmeh/web2-project-test.git"
+  },
+  "author": "Emad Daraghmeh, Razan Kharraz, Omar Haj Daoud, Rahaf Zawyani  ,Leen Hasoun, Nada Rinno, Najwa Yaseen, Boshra Hourani",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmadDaraghmeh/web2-project-test/issues"
+  },
+  "homepage": "https://github.com/EmadDaraghmeh/web2-project-test#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.1",
+    "validator": "^13.12.0"
   }
 }
