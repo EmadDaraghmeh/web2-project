@@ -1,3 +1,4 @@
+
 const express = require("express");
 const mongoose = require("mongoose");
 const routerBlog = require("./src/Routes/Brand");
@@ -6,22 +7,10 @@ const cookieParser = require("cookie-parser");
 const { PORT, mongoDBURL } = require("./config");
 const SignUpInfluencer=require('./src/Controller/SignUpInfluencerRouter')
 const path=require('path')
+
 const app = express();
 
-// console.log(typeof BrandModel)
-app.use(express.json());
-app.use(cors());
-/*serves static assets*/
-app.use(express.static("public"));
-/* required to read data from post */
-app.use(express.urlencoded({ extended: false }));
 
-app.use(cookieParser());
-
-app.get("/", (req, res) => {
-	console.log(req);
-	return res.status(234).send("Hello");
-});
 
 // app.use("/brands", routerBlog);
 app.use("/brands", routerBlog);

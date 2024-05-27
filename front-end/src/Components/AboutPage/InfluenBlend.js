@@ -1,5 +1,7 @@
 import React from "react";
 import "./InfluenBlend.css";
+import { Link } from "react-router-dom";
+
 import picture1 from "../Image/picture1.png";
 import picture2 from "../Image/‏‏picture2.png";
 import picture3 from "../Image/‏‏picture3.png";
@@ -59,9 +61,11 @@ function InfluenBlend() {
 					</div>
 				</div>
 				<img className="brandphoto" src={picture2} alt="Brand"></img>
+				<Link className="join-as-brand-link" to="/BrandSignUp">
 				<div className="brand-button" id="brand-button-about">
 					<span className="see-details" id="see-details-about">JOIN AS BRAND</span>
 				</div>
+				</Link>
 			</div>
 			<hr></hr>
 
@@ -86,9 +90,11 @@ function InfluenBlend() {
 					</p>
 				</div>
 				<img className="creatorphoto" src={picture3} alt="Creator"></img>
+				<Link className="join-as-creator-link" to="/InfluencerSignUp">
 				<div className="creator-button"id="creator-button-about">
 					<span className="see-details2" id="see-details2-about">JOIN AS CREATOR</span>
 				</div>
+				</Link>
 			</div>
 
 			<div className="container4" id="container4-about">
