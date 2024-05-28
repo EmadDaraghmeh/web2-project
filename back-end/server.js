@@ -9,7 +9,7 @@ const path=require('path')
 const app = express();
 const routerInfluencerPage= require('./src/Controller/InfluencerProfileRouter')
 const routerContactUs=require('./src/Controller/ContactUsRouter')
-
+//const routerUserPost= require('./src/Controller/UserPostRouter')
 // console.log(typeof BrandModel)
 app.use(express.json());
 app.use(cors());
@@ -28,7 +28,9 @@ app.get("/", (req, res) => {
 // app.use("/brands", routerBlog);
 app.use("/brands", routerBlog);
 app.use("/signupinfluencer",SignUpInfluencer);
+
 app.use('/influencerprofilepage',routerInfluencerPage);
+
 app.use('/contactUs',routerContactUs);
 
 app.get("", (req, res) => {

@@ -10,7 +10,7 @@ routerSignup.post('/', async (req, res) => {
     try {
         const {
             email, userName, password,userRole,
-            countryCode,industry,price,picture,cover,socialMedia,
+            countryCode,industry,price,picture,cover,
             phoneNumber, country, city, zipCode,
         } = req.body; 
         console.log(req.body,10)
@@ -33,8 +33,8 @@ routerSignup.post('/', async (req, res) => {
             city,
             zipCode,
             picture,
-            cover,
-            socialMedia
+            cover
+           
         });
         console.log(newUser)
         await newUser.save();

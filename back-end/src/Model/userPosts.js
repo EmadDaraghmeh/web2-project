@@ -12,5 +12,5 @@ const userPost = new Schema({
     },
 });
 
-const Post = mongoose.model('influncer-posts', userPost);
+const Post = mongoose.model('userpost', userPost);
 module.exports = Post;

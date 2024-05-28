@@ -14,7 +14,7 @@ const InfluenceProfilePage = () => {
     axios.get(`http://localhost:4000/influencerprofilepage/${id}`)
       .then(res => {
         {console.log(res.data)}
-        setData([res.data]);
+        setData(res.data);
       })
       .catch(err => {
         console.log(err);
@@ -272,37 +272,37 @@ const InfluenceProfilePage = () => {
               <div className="col-auto">
                 <button className="btn btn-primary btn-custom btn-instagram">
                   <i className="bi bi-instagram" id="social"></i>
-                  <a href={data.instagramLink} target="_blank" rel="noopener noreferrer"></a>
+                  <a href={data.socialMedia.instagram} target="_blank" rel="noopener noreferrer"></a>
                 </button>
               </div>
               <div className="col-auto">
                 <button className="btn btn-primary btn-custom btn-facebook">
                   <i className="bi bi-facebook" id="social"></i>
-                  <a href={data.facebookLink} target="_blank" rel="noopener noreferrer"></a>
+                  <a href={data.socialMedia.facebook} target="_blank" rel="noopener noreferrer"></a>
                 </button>
               </div>
               <div className="col-auto">
                 <button className="btn btn-primary btn-custom btn-tiktok">
                   <i className="bi bi-tiktok" id="social"></i>
-                  <a href={data.tiktokLink} target="_blank" rel="noopener noreferrer"></a>
+                  <a href={data.socialMedia.tiktok} target="_blank" rel="noopener noreferrer"></a>
                 </button>
               </div>
               <div className="col-auto">
                 <button className="btn btn-primary btn-custom btn-snapchat">
                   <i className="bi bi-snapchat" id="social"></i>
-                  <a href={data.snapchatLink} target="_blank" rel="noopener noreferrer"></a>
+                  <a href={data.socialMedia.snapchat} target="_blank" rel="noopener noreferrer"></a>
                 </button>
               </div>
               <div className="col-auto">
                 <button className="btn btn-primary btn-custom btn-youtube">
                   <i className="bi bi-youtube" id="social"></i>
-                  <a href={data.youtubeLink} target="_blank" rel="noopener noreferrer"></a>
+                  <a href={data.socialMedia.youtube} target="_blank" rel="noopener noreferrer"></a>
                 </button>
               </div>
               <div className="col-auto">
                 <button className="btn btn-primary btn-custom btn-twitter">
                   <i className="bi bi-twitter" id="social"></i>
-                  <a href={data.twitterLink} target="_blank" rel="noopener noreferrer"></a>
+                  <a href={data.socialMedia.x} target="_blank" rel="noopener noreferrer"></a>
                 </button>
               </div>
             </div>
