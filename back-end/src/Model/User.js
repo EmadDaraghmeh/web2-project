@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-
+const validator = require("validator");
 const CreateAcc = new Schema({
   userName: {
     type: String,
@@ -14,23 +14,20 @@ const CreateAcc = new Schema({
     trim: true,
     isLowercase: true,
 
-   
-  }, industry:{
-    type: String,
-    required: true,
-  }
-  ,countryCode:{
-    type: String,
-    required: true,
-  },
-  price:{
-    type: String,
-    required: true,
+    validate(value) {
+      if (!validator.isEmail(value)) {
+        throw new Error("Email is invalid");
+      }
+    },
   },
   phoneNumber: {
     type: String,
     required: true,
-  
+    validate(value) {
+      if (!validator.isMobilePhone(value)) {
+        throw new Error("Phonr number is invalid");
+      }
+    },
   },
   country: {
     type: String,
@@ -42,31 +39,23 @@ const CreateAcc = new Schema({
   },
   zipCode: {
     type: String,
-    required: false,
+    required: true,
   },
   password: {
     type: String,
     required: true,
     trim: true,
     minlength: 8,
-   
+    validate(value) {
+      if (!validator.isStrongPassword(value)) {
+        throw new Error("Password is not Strong");
+      }
+    },
   },
   userRole: { 
     type: String,
     enum: ["brand", "influencer"],
-     required: true ,
-    default:"brand"
-  },socialMedia: {
-    type: String,
-    required:true,
-    enum: ['instagram', 'facebook', 'tiktok', 'youtube', 'snapChat', 'X']},
-    picture:{
-      type: String,
-      required:false
-    }, cover:{
-      type: String,
-      required:false
-    }
+    required: true },
 });
 
 const User = mongoose.model("users", CreateAcc);

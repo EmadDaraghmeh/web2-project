@@ -1,42 +1,37 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import React from "react";
-// import AccSettingPass from "./Components/AccSettingPass/AccSettingPass";
-// import AccountSettings from "./Components/AccountSettings/AccountSettings";
-// import "./App.css";
-// import HomeNavbar from "./Components/Navbars/HomeNavbar";
-// import MainLandingPage from "./Components/MainLandingPage/MainLandingPage";
- import Footer from "./Components/Footer/Footer";
-// import DeleteAccountForm from "./Components/DeleteAccountSettings/DeleteAccountForm";
-// import InfluenBlend from "./Components/AboutPage/InfluenBlend";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import AccSettingPass from "./Components/AccSettingPass/AccSettingPass";
+import AccountSettings from "./Components/AccountSettings/AccountSettings";
+import "./App.css";
+import HomeNavbar from "./Components/Navbars/HomeNavbar";
+import MainLandingPage from "./Components/MainLandingPage/MainLandingPage";
+import Footer from "./Components/Footer/Footer";
+import DeleteAccountForm from "./Components/DeleteAccountSettings/DeleteAccountForm";
+import InfluenBlend from "./Components/AboutPage/InfluenBlend";
 // import SignUpInfluencer from "./Components/SignUpInfluencer/SignUpInfluencer";
-// import SignUp from "./Components/SignUp2/SignUp";
-// import InfluencerHome from "./Components/loadingBrandPage/InfluencerHome";
-//import ContactUs from "./Components/ContactUs/ContactUs";
-// import Blog from "./Components/BlogPage/Blog";
-// import Signupbrand from "./Components/signupBrand/Signupbrand";
-// import Banner from "./Components/Business_landing_page/Banner";
-// import All from "./Components/Influencer_discovery/all";
-// import BrandsNavbar from "./Components/Navbars/BrandsNavbar";
-// import InfluencerNavbar from "./Components/Navbars/InfluencerNavbar";
-// import BrandP from "./Components/BrandProfile/BrandP";
-// import Offers from "./Components/Offers/Offers";
-// import ChoosePlatform from "./Components/Business_landing_page/ChoosePlatform";
-// import Collaborate from "./Components/Business_landing_page/Collaborate";
-// import CollaborationSteps from "./Components/Business_landing_page/CollaborationSteps";
-// import UpgradeCard from "./Components/Business_landing_page/UpgradeCard";
-// import Finalone from "./Components/Business_landing_page/Finalone";
-// import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
-// import SideBar from "./Components/BrandDiscovery/SideBar";
-
-import InfluenceProfilePage from "./Components/InfluencerProfilePage/InfluencerProfilePage";
+import SignUp from "./Components/SignUp2/SignUp";
+import InfluencerHome from "./Components/loadingBrandPage/InfluencerHome";
+import ContactUs from "./Components/ContactUs/ContactUs";
+import Blog from "./Components/BlogPage/Blog";
+import Signupbrand from "./Components/signupBrand/Signupbrand";
+import Banner from "./Components/Business_landing_page/Banner";
+import All from "./Components/Influencer_discovery/all";
+import BrandsNavbar from "./Components/Navbars/BrandsNavbar";
+import InfluencerNavbar from "./Components/Navbars/InfluencerNavbar";
+import BrandP from "./Components/BrandProfile/BrandP";
+import Offers from "./Components/Offers/Offers";
+import ChoosePlatform from "./Components/Business_landing_page/ChoosePlatform";
+import Collaborate from "./Components/Business_landing_page/Collaborate";
+import CollaborationSteps from "./Components/Business_landing_page/CollaborationSteps";
+import UpgradeCard from "./Components/Business_landing_page/UpgradeCard";
+import Finalone from "./Components/Business_landing_page/Finalone";
+import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
+import SideBar from "./Components/BrandDiscovery/SideBar";
 
 function App() {
 	return (
 		<div className="app">
-			{/* < InfluencerNavbar/> */}
-			<InfluenceProfilePage/>
-			<Footer/>
-			{/* <BrowserRouter>
+			<BrowserRouter>
 				<Routes>
 					<Route
 						path="/"
@@ -73,7 +68,7 @@ function App() {
 							</div>
 						}
 					/>
-				 <Route path="/InfluencerSignUp" element={<SignUpInfluencer />} /> 
+					{/* <Route path="/InfluencerSignUp" element={<SignUpInfluencer />} /> */}
 					<Route path="/BrandSignUp" element={<Signupbrand />} />
 					<Route
 						path="/Home"
@@ -186,7 +181,7 @@ function App() {
 								<Footer />
 							</div>
 						}
-					/> */}
+					/>
 					{/* <Route
 						path="/BrandAccountSettings"
 						element={
@@ -197,7 +192,7 @@ function App() {
 							</div>
 						}
 					/> */}
-{/* 
+
 					<Route
 						path="/BrandOffers"
 						element={
@@ -254,7 +249,7 @@ function App() {
 					/>
 				</Routes>
 			</BrowserRouter>
-			<SignPopup /> */}
+			{/* <SignPopup /> */}
 		</div>
 	);
 }

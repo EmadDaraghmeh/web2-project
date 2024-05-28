@@ -4,40 +4,36 @@ const User = require('../Model/User');
 
 const routerSignup = express.Router();
 
-
  
-routerSignup.post('/', async (req, res) => {
+routerSignup.post('/SignUpInfluencer', async (req, res) => {
     try {
         const {
-            email, userName, password,userRole,
-            countryCode,industry,price,picture,cover,socialMedia,
+            email, firstName, lastName, password,
             phoneNumber, country, city, zipCode,
-        } = req.body; 
-        console.log(req.body,10)
+        } = req.body;
+
+       
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).send("User already exists!");
         }
+
+    
         const hashedPassword = await bcrypt.hash(password, 10);
-        
+
+     
         const newUser = new User({
-            userName,
             email,
-            price,
-            phoneNumber,
-            industry,
+            firstName,
+            lastName,
             password: hashedPassword,
-            countryCode,
-            userRole,
+            phoneNumber,
             country,
             city,
-            zipCode,
-            picture,
-            cover,
-            socialMedia
+            zipCode
         });
-        console.log(newUser)
         await newUser.save();
+
         console.log("New user registered:", newUser);
         res.status(201).send("Registered Successfully");
     } catch (err) {
@@ -46,4 +42,5 @@ routerSignup.post('/', async (req, res) => {
     }
 });
 
-module.exports=routerSignup;
+
+ module.exports=routerSignup;
