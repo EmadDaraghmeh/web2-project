@@ -1,0 +1,134 @@
+.error{
+    color: red;
+}
+
+
+
+#border-card{
+    border-color: #ff1b6d;
+    background-color: white;
+    margin-top: 40px;
+
+}
+#form-label1{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label11{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label2{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label3{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label4{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label5{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label6{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label7{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label8{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label9{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label10{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+#form-label12{
+    margin-left: auto;
+    color: #ff1b6d;
+}
+
+
+#userName{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+   
+}
+
+#email{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+#industry{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+#password{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+#confirmPassword{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+#price{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+#phoneNumber{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+#city{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+#zipCode{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+
+
+#countryCode{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+#country{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
+
+
+#invalidCheck2{
+    border-color: #ff1b6d;
+   
+}
+#check{
+    color: #ff1b6d;
+}
+
+#sign-up{
+    margin-bottom: 10px;
+font-style: italic;
+color: #ff1b6d;
+}
+#submit{
+    background-color: #ff1b6d;
+    border-color: #ff1b6d;
+}
+#submit:hover{
+    background-color:white !important;
+    color:  #ff1b6d;
+}
+
