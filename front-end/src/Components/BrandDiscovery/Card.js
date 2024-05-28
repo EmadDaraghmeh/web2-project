@@ -40,7 +40,6 @@ const CardD = (props) => {
             </svg>
             <span>{numberOfFollowers}</span>
         </div>
-        
       </div>
     </div>
     </>

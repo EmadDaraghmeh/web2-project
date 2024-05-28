@@ -15,7 +15,7 @@ export default function Blog() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/Blog')
+    axios.get('http://localhost:4000/Blog')
       .then(response => {
         const fetchedBlogs = response.data.data.map((blog, index) => ({
           ...blog,

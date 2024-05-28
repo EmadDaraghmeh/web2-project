@@ -24,19 +24,6 @@ function SignPopup() {
 						&times;
 					</button>
 					<div className="formInnerContainer">
-						<div className="toggle-container">
-							<span className={`toggle-label ${!isInfluencer ? "active" : ""}`}>
-								Brand
-							</span>
-							<label className="custom-switch">
-								<input type="checkbox" onChange={handleToggle} />
-								<span className="custom-slider round"></span>
-							</label>
-							<span className={`toggle-label ${isInfluencer ? "active" : ""}`}>
-								Influencer
-							</span>
-						</div>
-
 						<div className="mb-3" id="MMmmBBBbb">
 							<label
 								htmlFor="exampleInputEmail1"

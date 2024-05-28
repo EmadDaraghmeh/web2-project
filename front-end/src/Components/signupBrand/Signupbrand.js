@@ -1,8 +1,37 @@
-import React from "react";
+import React , {useState} from "react" ;
 import "./Signupbrand.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Signupbrand() {
+	const [formData, setFormData] = useState({
+        Emailadaress: 'leenhasoun@gmaim.com',
+        BrandName: 'vhfjf',
+        confirmpassword: '123456',
+        password: '123456',
+        countryCode: '+970',
+        phoneNumber: '0597448575',
+        country: 'efea',
+        city: 'feaS',
+        Category: 'deF',
+        Thenumberoffollowerofcompany: '12124',
+        state: 'dsfv',
+    });
+
+    const handleChange = (e) => {
+        setFormData({ [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:3000/api/signup', formData);
+            console.log(response.data);
+        } catch (error) {
+            console.error(error.response.data);
+            
+        }
+    };
 	return (
 		<div className="brandSignUpContainer">
 			<form className="forms" id="Formss55">

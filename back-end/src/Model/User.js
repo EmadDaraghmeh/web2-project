@@ -7,7 +7,8 @@ const CreateAcc = new Schema({
   userName: {
     type: String,
     required: true,
-    unique: true },
+    unique: true
+  },
   email: {
     type: String,
     required: true,
@@ -39,7 +40,7 @@ const CreateAcc = new Schema({
   },
   zipCode: {
     type: String,
-    required: true,
+    required: false,
   },
   password: {
     type: String,
@@ -51,11 +52,12 @@ const CreateAcc = new Schema({
         throw new Error("Password is not Strong");
       }
     },
-  },
-  userRole: { 
+  },userRole: {
     type: String,
     enum: ["brand", "influencer"],
-    required: true },
+    required: true,
+    default: 'brand'
+  },
 });
 
 const User = mongoose.model("users", CreateAcc);
