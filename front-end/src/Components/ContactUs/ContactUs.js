@@ -2,15 +2,10 @@ import './ContactUs.css'
 import React from "react"
 import image from "./photo-1486312338219-ce68d2c6f44d.avif"
 import { useState } from 'react'
-
+import axios from 'axios'
 const ContactUs = () => {
 
-  const [formData, setFormData] = useState({
-    F_name: '',
-    L_name: '',
-    E_mail: '',
-    message: ''
-    });
+  const [formData, setFormData] = useState({});
 
   const [errors, setErrors] =useState({});
 
@@ -69,7 +64,18 @@ const ContactUs = () => {
     if (hasEmptyFields) {
     console.log("Form has errors. Please fix them.");
     } else {
-    console.log("Form submitted successfully");
+      axios.post('http://localhost:4000/contactUs', formData)
+      .then(res => {
+        console.log(res.data);
+        console.log("Form submitted successfully");
+        alert("message has sent");
+  
+      })
+      .catch(err => {
+        console.error(err.response.data);
+      });
+
+   
     }
 
   };
