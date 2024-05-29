@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./AccountSettings.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { useParams,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
 const AccountSettings = () => {
-    const { userId } = useParams();
+    const  userId  = "6654eaa08994fd4bb77a163c";
     const [showModal, setShowModal] = useState(false);
     const [currentLink, setCurrentLink] = useState({ name: "", url: "" });
     const [userData, setUserData] = useState({
@@ -30,18 +30,22 @@ const AccountSettings = () => {
     });
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/get-user/${userId}`)
-            .then((res) => {
-                setUserData(res.data);
-            })
-            .catch((err) => {
-                console.log(err.response.data);
-            });
+        if (userId) {
+            axios.get(`http://localhost:4000/get-user/${userId}`)
+                .then((res) => {
+                    setUserData(res.data);
+                })
+                .catch((err) => {
+                    console.log(err.response.data);
+                });
+        }
     }, [userId]);
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setUserData({ ...userData, [name]: value });
     };
+
     const handleSaveChanges = async (e) => {
         e.preventDefault();
 
@@ -116,6 +120,7 @@ const AccountSettings = () => {
         navigate("/DeleteAccount");
         console.log("Delete button clicked");
     };
+
 
     return (
         <div className="account-settings">

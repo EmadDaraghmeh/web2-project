@@ -1,13 +1,13 @@
 import React, {   useState } from "react";
 import "./AccSettingPass.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { useParams,Link, useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const AccSettingPass = () => {
 	const [newPassword, setNewPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
-	const { userId } = useParams();
+	const   userId  = "6654e750aa2fe1970119b16c ";
 	const navigate = useNavigate();
 
 	const handlePasswordChange = async (e) => {

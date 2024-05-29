@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
-
 const { Schema } = mongoose;
-
 const validator = require("validator");
 const CreateAcc = new Schema({
   userName: {
     type: String,
     required: true,
-    unique: true },
+    unique: true
+   },
   email: {
     type: String,
     required: true,
@@ -39,7 +38,7 @@ const CreateAcc = new Schema({
   },
   zipCode: {
     type: String,
-    required: true,
+    required: false,
   },
   password: {
     type: String,
@@ -55,7 +54,21 @@ const CreateAcc = new Schema({
   userRole: { 
     type: String,
     enum: ["brand", "influencer"],
-    required: true },
+    required: true
+   },
+   socialMediaLinks: {
+    instagram: { type: String },
+    facebook: { type: String },
+    tiktok: { type: String },
+    twitter: { type: String },
+    youtube: { type: String },
+    snapchat: { type: String },
+    
+},
+price: {
+  type: String,
+  required: true,
+},
 });
 
 const User = mongoose.model("users", CreateAcc);
