@@ -35,12 +35,7 @@
   }
   
   
-  #PLC {
-    background-color: #FFC0CB;
-    border-radius: 1px;
-    padding: 3px 6px;
-    font-size: 14px;
-  }
+  
   
   
   #PC {
@@ -138,3 +133,18 @@
     }
   }
   
+
+
+.apply-filter-button {
+  background-color: #ff0073;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.apply-filter-button:hover {
+  background-color: pink;
+}

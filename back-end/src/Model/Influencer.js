@@ -1,66 +1,123 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 
-const influencer = new Schema({
-  
-    firstName: {
-        type: String,
-        required: true
+
+const socialMediaSchema = new mongoose.Schema({
+    numberOfFollowers: {
+      type: Number,
+      default: 0,
     },
-    lastName: {
-        type: String,
-        required: true
+    type: {
+      type: String,
+      default: "",
     },
+  });
+
+const influencerSchema = mongoose.Schema({ 
+   
     email: {
         type: String,
-        required: true
+        required: true,
+        
     },
     phoneNumber: {
         type: String,
-        required: true
+        required: true,
+        
     },
     country: {
         type: String,
-        required: true
+        required: true,
+       
     },
     city: {
         type: String,
-        required: true
+        required: true,
+      
     },
     zipCode: {
         type: String,
-        required: true
+        required: true,
+        
     },
     password: {
         type: String,
-        required: true
-    },
-    instagram: {
-        type: String,
-        required: false
-    },
-    facebook: {
-        type: String,
-        required: false
+        required: true,
+       
     },
     cover: {
         type: String,
-        required: false
+        required: false,
+       
     },
     profilePhoto: {
         type: String,
-        required: false
+        required: false,
+       
     },
-    postIds:{
-        type:mongoose.Schema.Types.ObjectId, ref: 'brand-posts',
-        required:true
+    numberOfFollowers: {
+        type: String,
+        required: true,
+       
     },
-    offerIds:{
-        type:mongoose.Schema.Types.ObjectId, ref: 'offers',
-        required:true
+    logo: {
+        type: String,
+        required: false,
+        
     },
-  
+    type: {
+        type: String,
+        required: true,
+       
+    },
+    category: {
+        type: String,
+        required: true,
+        
+    },
+    platform:{
+        instagram: socialMediaSchema,
+        facebook: socialMediaSchema,
+        tiktok: socialMediaSchema,
+        youtube: socialMediaSchema,
+        snapChat: socialMediaSchema,
+        X: socialMediaSchema,
+        type: {
+          type: String,
+          required: true,
+          enum: ['instagram', 'facebook', 'tiktok', 'youtube', 'snapChat', 'X'],
+        },
+      },
+    postIds: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'brand-posts',
+        required: true
+    }],
+    offerIds: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'offers',
+        required: true
+    }],
+    orderby: {
+        type: String,
+        required: false,
+        
+    },
+    price: {
+        type: Number,
+        required: false,
+      
+    },
+    firstName: {
+        type: String,
+        required: false,
+        
+    },
+    lastName: {
+        type: String,
+        required: false,
+       
+    },
 });
 
-const User = mongoose.model('influencers', influencer);
-module.exports = User;
+const Influencer = mongoose.model('Influencer', influencerSchema);
+module.exports = Influencer;
