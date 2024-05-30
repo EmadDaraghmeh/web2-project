@@ -4,7 +4,17 @@ import { useState } from "react";
 import OffersForm from "../MainLandingPage/OffersForm";
 import restaurantImage from "../Image/Screenshot 2024-04-26 191047.png";
 
-function OfferCard() {
+function OfferCard({
+	offerId,
+	platform,
+	terms,
+	startDate,
+	endDate,
+	price,
+	state,
+	sentBy,
+	onUpdate,
+}) {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const toggleVisibility = () => {
@@ -37,7 +47,20 @@ function OfferCard() {
 					>
 						view offer
 					</button>
-					{isVisible && <OffersForm toggleVisibility={toggleVisibility} />}
+					{isVisible && (
+						<OffersForm
+							toggleVisibility={toggleVisibility}
+							offerId={offerId}
+							price={price}
+							platform={platform}
+							startDate={startDate}
+							terms={terms}
+							endDate={endDate}
+							onUpdate={onUpdate}
+							state={state}
+							sentBy={sentBy}
+						/>
+					)}
 				</div>
 			</div>
 		</div>
