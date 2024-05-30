@@ -5,13 +5,13 @@ import AccountSettings from "./Components/AccountSettings/AccountSettings";
 import "./App.css";
 import HomeNavbar from "./Components/Navbars/HomeNavbar";
 import MainLandingPage from "./Components/MainLandingPage/MainLandingPage";
- import Footer from "./Components/Footer/Footer";
+  import Footer from "./Components/Footer/Footer";
 import DeleteAccountForm from "./Components/DeleteAccountSettings/DeleteAccountForm";
 import InfluenBlend from "./Components/AboutPage/InfluenBlend";
 import SignUpInfluencer from "./Components/SignUpInfluencer/SignUpInfluencer";
 import SignUp from "./Components/SignUp2/SignUp";
 import InfluencerHome from "./Components/loadingBrandPage/InfluencerHome";
-import ContactUs from "./Components/ContactUs/ContactUs";
+ import ContactUs from "./Components/ContactUs/ContactUs";
 import Blog from "./Components/BlogPage/Blog";
 import Signupbrand from "./Components/signupBrand/Signupbrand";
 import Banner from "./Components/Business_landing_page/Banner";
@@ -28,6 +28,8 @@ import Finalone from "./Components/Business_landing_page/Finalone";
 import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
 import SideBar from "./Components/BrandDiscovery/SideBar";
 
+//import InfluenceProfilePage from "./Components/InfluencerProfilePage/InfluencerProfilePage";
+
 
 
 function App() {
@@ -35,6 +37,7 @@ function App() {
 		<div className="app">
 			
 			
+
 			<BrowserRouter>
 				<Routes>
 					<Route
@@ -254,10 +257,10 @@ function App() {
 				</Routes>
 			</BrowserRouter>
 			{/* <SignPopup /> */}
-		</div>
-	);
-}
- export default App;
+	</div>
+ 	);
+ }
+  export default App;
 
 
 

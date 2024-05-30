@@ -7,7 +7,7 @@ import image from './photo-1486312338219-ce68d2c6f44d.avif';
 
 
 const InfluenceProfilePage = () => {
-  const {id} = useParams();
+  const {id , brandId} = useParams();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -68,8 +68,8 @@ const InfluenceProfilePage = () => {
           startDate,
           endDate,
           price,
-          influencerId: "605c72ef5947c544d2f7cdbb",
-          brandId: id,
+          influencerId:id,
+          brandId: "605c72ef5947c544d2f7cdbb",
           state: "pending",
         }),
       });
