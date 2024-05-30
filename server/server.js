@@ -1,6 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routerBlog = require("./src/Controller/BrandRoutes");
+const routerCollab = require("./src/Controller/BrandCollab");
+const routerBprofile = require("./src/Controller/BrandProfile");
+const routerLinks = require("./src/Controller/SignUpLinks");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const Influencer =require('../server/src/Controller/Influencer')
@@ -17,6 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());
 app.use('/influencer',Influencer)
+app.use("/collab", routerCollab);
+app.use("/bprofile", routerBprofile);
+app.use("/link", routerLinks);
 app.get("/", (req, res) => {
 	console.log(req);
 	return res.status(234).send("Hello");

@@ -14,7 +14,7 @@ const CreateAcc = new Schema({
     trim: true,
     isLowercase: true,
 
-   
+
   }, industry:{
     type: String,
     required: true,
@@ -30,7 +30,7 @@ const CreateAcc = new Schema({
   phoneNumber: {
     type: String,
     required: true,
-  
+
   },
   country: {
     type: String,
@@ -49,7 +49,7 @@ const CreateAcc = new Schema({
     required: true,
     trim: true,
     minlength: 8,
-   
+
   },
   userRole: { 
     type: String,
@@ -57,15 +57,12 @@ const CreateAcc = new Schema({
      required: true ,
     default:"brand"
   },socialMedia: {
-  
     instagram: { type: String, required: false },
     facebook: { type: String, required: false },
     tiktok: { type: String, required: false },
     youtube: { type: String, required: false },
     snapchat: { type: String, required: false },
-    x: { type: String, required: false },
-  },
-   
+    x: { type: String, required: false },},
     picture:{
       type: String,
       required:false
