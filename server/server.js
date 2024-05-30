@@ -6,17 +6,20 @@ const cookieParser = require("cookie-parser");
 const Influencer =require('../server/src/Controller/Influencer')
 const { PORT, mongoDBURL } = require("./config");
 const app = express();
-
+const BrandRoutes = require("./src/Controller/BrandRoutes");
 // console.log(typeof BrandModel)
 app.use(express.json());
 app.use(cors());
+
 /*serves static assets*/
 app.use(express.static("public"));
 /* required to read data from post */
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cors({
+    origin: 'http://localhost:3000'}));
 app.use(cookieParser());
-app.use('/influencer',Influencer)
+app.use('/influencer',Influencer);
+app.use("/", BrandRoutes);
 app.get("/", (req, res) => {
 	console.log(req);
 	return res.status(234).send("Hello");
