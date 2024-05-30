@@ -1,10 +1,36 @@
 import React, { useState } from "react";
 import "./SignPopup.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useAuth } from "../../Contexts/AuthContext";
 
 function SignPopup() {
 	const [isInfluencer, setIsInfluencer] = useState(false);
 	const [isVisible, setIsVisible] = useState(true);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const { setAuthUser, setIsLoggedIn } = useAuth();
+	const navigate = useNavigate();
+	const body = {
+		email: email,
+		password: password,
+	};
+	const handleSignIn = () => {
+		axios
+			.post("http://localhost:4000/users/Signin", body)
+			.then((res) => {
+				console.log(res.data._id);
+				setAuthUser(res.data);
+				setIsLoggedIn(true);
 
+				navigate(
+					res.data.userRole === "brand" ? "/brandsHomePage" : "/InfluencerHome"
+				);
+			})
+			.catch((e) => {
+				console.log("Error occurred while trying to sign in", e);
+			});
+	};
 	const handleToggle = () => {
 		setIsInfluencer(!isInfluencer);
 	};
@@ -19,7 +45,7 @@ function SignPopup() {
 		<>
 			<div className="blur-background" onClick={handleClose}></div>
 			<div className="signInContainer">
-				<form className="form" id="popUp-form">
+				<div className="form" id="popUp-form">
 					<button className="close-btn" onClick={handleClose}>
 						&times;
 					</button>
@@ -51,6 +77,8 @@ function SignPopup() {
 								name="name"
 								id="CCccOOOontRROoolLL"
 								aria-describedby="emailHelp"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
 							/>
 						</div>
 						<div className="mb-3" id="MMmmBBBbb">
@@ -65,6 +93,8 @@ function SignPopup() {
 								type="password"
 								className="form-control"
 								id="CCccOOOontRROoolLL"
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
 							/>
 						</div>
 
@@ -72,11 +102,12 @@ function SignPopup() {
 							type="submit"
 							className="btn btn-primary"
 							id="BBBbbbTTnnnnN"
+							onClick={handleSignIn}
 						>
-							Submit
+							Sign in
 						</button>
 					</div>
-				</form>
+				</div>
 			</div>
 		</>
 	);
