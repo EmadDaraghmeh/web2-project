@@ -1,82 +1,82 @@
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const validator=require('validator')
 
 const CreateAcc = new Schema({
+  userName: {
+    type: String,
+    required: true,
+    unique: true },
+  email: {
+    type: String,
+    required: true,
+    trim: true,
+    isLowercase: true,
+
+   
+  }, industry:{
+    type: String,
+    required: true,
+  }
+  ,countryCode:{
+    type: String,
+    required: true,
+  },
+  price:{
+    type: String,
+    required: true,
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
   
-    firstName: {
-        type: String,
-        required: true,
-        trim:true,
-        validate(value){
-            if(validator.isEmpty(value)){
-                throw new Error(' first name is required')
-            }
-        }
-        
-
-    },
-    lastName: {
-        type: String,
-        required: true,
-        trim:true,
-        validate(value){
-            if(validator.isEmpty(value)){
-                throw new Error('last  name is required')
-            }
-        }
-    },
-    email: {
-        type: String,
-        required: true,
-        trim:true,
-        isLowercase:true,
-
-        validate(value){
-       if(!validator.isEmail(value)){
-        throw new Error('Email is invalid')
-       }
-        }
-    },
-    phoneNumber: {
-        type: String,
-        required: true,
-        validate(value){
-            if(!validator.isMobilePhone(value)){
-                throw new Error('Phonr number is invalid')
-            }
-        }
-
-    },
-    country: {
-        type: String,
-        required: true
-    },
-    city: {
-        type: String,
-        required: true
-    },
-    zipCode: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true,
-        trim:true,
-        minlength:8,
-        validate(value){
-            if(!validator.isStrongPassword(value)){
-              throw new Error('Password is not Strong')
-            }
-
-        }
-    },
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  zipCode: {
+    type: String,
+    required: false,
+  },
+  password: {
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 8,
+   
+  },
+  userRole: { 
+    type: String,
+    enum: ["brand", "influencer"],
+     required: true ,
+    default:"brand"
+  },socialMedia: {
   
+    instagram: { type: String, required: false },
+    facebook: { type: String, required: false },
+    tiktok: { type: String, required: false },
+    youtube: { type: String, required: false },
+    snapchat: { type: String, required: false },
+    x: { type: String, required: false },
+  },
+   
+    picture:{
+      type: String,
+      required:false
+    }, cover:{
+      type: String,
+      required:false
+    },description:{
+      type: String,
+      required:false
+    }
 });
 
-const User = mongoose.model('users', CreateAcc);
+const User = mongoose.model("users", CreateAcc);
 module.exports = User;

@@ -14,7 +14,10 @@
     margin-left: auto;
     color: #ff1b6d;
 }
-
+#form-label11{
+    margin-left: auto;
+    color: #ff1b6d;
+}
 #form-label2{
     margin-left: auto;
     color: #ff1b6d;
@@ -51,19 +54,23 @@
     margin-left: auto;
     color: #ff1b6d;
 }
+#form-label12{
+    margin-left: auto;
+    color: #ff1b6d;
+}
 
 
-
-#firstname{
+#userName{
     border-color: #ff1b6d;
     background-color: #faf2f8;
    
 }
-#lastname{
+
+#email{
     border-color: #ff1b6d;
     background-color: #faf2f8;
 }
-#email{
+#industry{
     border-color: #ff1b6d;
     background-color: #faf2f8;
 }
@@ -75,7 +82,10 @@
     border-color: #ff1b6d;
     background-color: #faf2f8;
 }
-
+#price{
+    border-color: #ff1b6d;
+    background-color: #faf2f8;
+}
 #phoneNumber{
     border-color: #ff1b6d;
     background-color: #faf2f8;
@@ -84,7 +94,7 @@
     border-color: #ff1b6d;
     background-color: #faf2f8;
 }
-#zip{
+#zipCode{
     border-color: #ff1b6d;
     background-color: #faf2f8;
 }
