@@ -19,7 +19,6 @@ function SignPopup() {
 		axios
 			.post("http://localhost:4000/users/Signin", body)
 			.then((res) => {
-				console.log(res.data._id);
 				setAuthUser(res.data);
 				setIsLoggedIn(true);
 

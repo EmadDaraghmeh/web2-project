@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./SignUpInfluencer.css";
+import { useAuth } from "../../Contexts/AuthContext";
 
 const SignUpInfluencer = () => {
+	const { setAuthUser } = useAuth();
 	const [formData, setFormData] = useState({
 		userRole: "influencer",
 	});
@@ -77,17 +79,15 @@ const SignUpInfluencer = () => {
 		if (hasEmptyFields) {
 			console.log("Form has errors. Please fix them.");
 		} else {
-			console.log(formData);
-
 			axios
-				.post("http://localhost:4000/influencer/signup", formData)
+				.post("http://localhost:4000/signUpInfluencer", formData)
 				.then((res) => {
-					console.log(res.data);
 					console.log("Form submitted successfully");
+					setAuthUser(res.data);
 					navigate("/SignUp");
 				})
 				.catch((err) => {
-					console.error(err.response.data);
+					console.error(err);
 				});
 		}
 	};
