@@ -57,8 +57,7 @@ const CreateAcc = new Schema({
      required: true ,
     default:"brand"
   },socialMedia: {
-    type: String,
-    enum: ['instagram', 'facebook', 'tiktok', 'youtube', 'snapChat', 'X'],
+  
     instagram: { type: String, required: false },
     facebook: { type: String, required: false },
     tiktok: { type: String, required: false },
