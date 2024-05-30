@@ -27,9 +27,7 @@ import UpgradeCard from "./Components/BusinessLandingPage/UpgradeCard";
 import Finalone from "./Components/BusinessLandingPage/Finalone";
 import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
 
-
 import { AuthProvider } from "./Contexts/AuthContext";
-
 
 function App() {
 	return (
@@ -197,7 +195,6 @@ function App() {
 						}
 					/> */}
 
-
 						<Route
 							path="/BrandOffers"
 							element={
@@ -205,7 +202,6 @@ function App() {
 									<BrandsNavbar />
 									<Offers />
 									<Footer />
-
 								</div>
 							}
 						/>
@@ -225,7 +221,6 @@ function App() {
 								<div>
 									<InfluencerNavbar />
 									<div className="sidebar">
-										
 										<SearchBrand />
 									</div>
 									<Footer />
