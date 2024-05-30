@@ -22,13 +22,13 @@ const BrandP = () => {
       try {
         const response = await fetch(`http://localhost:4000/bprofile/${id}`);
         if (!response.ok) {
-          throw new Error("Failed to fetch brand data");
+          throw new Error("fail to fetch brand data");
         }
         const data = await response.json();
         setBrand(data);
-        console.log("Fetched brand data:", data);
+        console.log("fetched brand data:", data);
       } catch (error) {
-        console.error("Error fetching brand data:", error);
+        console.error("error fetching brand data:", error);
       }
     };
 
@@ -83,12 +83,18 @@ const BrandP = () => {
       }
 
       const data = await response.json();
-      console.log("Collaboration created:", data);
-      alert("Offer sent successfully");
+      console.log("collaboration created:", data);
+      alert("offer sent successfully");
       setShowModal(false);
     } catch (error) {
-      console.error("Error submitting collaboration offer:", error);
+      console.error("error submitting collaboration offer:", error);
     }
+  };
+
+  const getSocialMediaLink = (platform) => {
+    return brand.socialMedia && brand.socialMedia[platform]
+      ? brand.socialMedia[platform]
+      : "#";
   };
 
   return (
@@ -211,21 +217,51 @@ const BrandP = () => {
         <div className="social-buttons" id="social-b">
           <button className="btn btn-custom btn-instagram" id="b-instagram">
             <i className="bi bi-instagram"></i>
+            <a
+              href={brand.socialMedia?.instagram || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-facebook" id="b-facebook">
             <i className="bi bi-facebook"></i>
+            <a
+              href={brand.socialMedia?.facebook || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-tiktok" id="b-tiktok">
             <i className="bi bi-tiktok"></i>
+            <a
+              href={brand.socialMedia?.tiktok || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-snapchat" id="b-snapchat">
             <i className="bi bi-snapchat"></i>
+            <a
+              href={brand.socialMedia?.snapchat || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-youtube" id="b-youtube">
             <i className="bi bi-youtube"></i>
+            <a
+              href={brand.socialMedia?.youtube || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-x" id="b-x">
             <i className="bi bi-twitter-x"></i>
+            <a
+              href={brand.socialMedia?.x || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
         </div>
       </div>

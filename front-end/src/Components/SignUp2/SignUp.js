@@ -22,7 +22,7 @@ const SignUp = () => {
 
   const handleSaveLink = async () => {
     if (inputValue === "") {
-      setErrorMessage("Please enter a link.");
+      setErrorMessage("please enter a link.");
       return;
     }
 
@@ -32,17 +32,17 @@ const SignUp = () => {
         link: inputValue,
       });
       setLinkSaved(true);
-      alert("Your account link has been saved");
+      alert("your account link has been saved");
       setInputValue("");
     } catch (error) {
-      console.error("Error saving the link", error);
-      alert("There was an error saving your link. Please try again.");
+      console.error("error saving the link", error);
+      alert("there was an error saving your link, try again.");
     }
   };
 
   const handleProfile = () => {
     if (!linkSaved) {
-      setErrorMessage("Enter a link for one platform at least");
+      setErrorMessage("enter a link for one platform at least");
       return;
     }
     navigate("/InfluencerHome");

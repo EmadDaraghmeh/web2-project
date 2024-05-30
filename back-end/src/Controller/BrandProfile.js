@@ -8,7 +8,7 @@ router.get("/:id", async (req, res) => {
     const brand = await Brand.findById(id);
 
     if (!brand) {
-      return res.status(404).json({ message: "Brand not found" });
+      return res.status(404).json({ message: "brand not found" });
     }
 
     return res.status(200).json({

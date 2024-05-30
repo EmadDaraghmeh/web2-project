@@ -1,5 +1,5 @@
-// import BrandP from "./Components/BrandProfile/BrandP";
-import SignUP from "./Components/SignUp2/SignUp";
+import BrandP from "./Components/BrandProfile/BrandP";
+// import SignUP from "./Components/SignUp2/SignUp";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -7,8 +7,8 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/brandProfile/:id" element={<BrandP />} /> */}
-          <Route path="/SignUp/:id" element={<SignUP />} />
+          <Route path="/brandProfile/:id" element={<BrandP />} />
+          {/* <Route path="/SignUp/:id" element={<SignUP />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
 
     if (!terms || !platform || !date || !startDate || !endDate || !price || !influencerId || !brandId) {
       return res.status(400).send({
-        message: 'Please provide all required fields: terms, platform, date, startDate, endDate, price, influencerId, brandId'
+        message: 'provide all required fields'
       });
     }
 

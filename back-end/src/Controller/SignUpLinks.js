@@ -8,19 +8,19 @@ router.patch("/:id", async (req, res) => {
   const { platform, link } = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    console.error("Invalid ID format:", id);
-    return res.status(400).send({ error: "Invalid ID format" });
+    console.error("invalid id format:", id);
+    return res.status(400).send({ error: "invalid id format" });
   }
 
   try {
-    console.log(`Finding user with ID: ${id}`);
+    console.log(`finding user with ID: ${id}`);
     const user = await User.findById(id);
     if (!user) {
-      console.log(`User not found for ID: ${id}`);
-      return res.status(404).send("User not found");
+      console.log(`user not found for id: ${id}`);
+      return res.status(404).send("user not found");
     }
 
-    console.log("User found:", user);
+    console.log("user found:", user);
 
     if (typeof user.socialMedia === 'string') {
       user.socialMedia = {};
@@ -31,12 +31,12 @@ router.patch("/:id", async (req, res) => {
     }
 
     await user.save();
-    console.log("Social media link updated successfully");
+    console.log("social media link updated successfully");
 
-    res.status(200).send("Social media link updated successfully");
+    res.status(200).send("social media link updated successfully");
   } catch (error) {
-    console.error("An error occurred while updating the social media link:", error.message);
-    res.status(500).send("An error occurred while updating the social media link");
+    console.error("there is an error occurred while updating the social media link", error.message);
+    res.status(500).send("there is an error occurred while updating the social media link");
   }
 });
 
