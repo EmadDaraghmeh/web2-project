@@ -12,22 +12,29 @@ const signupBrandRouter = require('./src/Controller/SignupBrand2');
 const offer = require('./src/Controller/Offerr')
 
 const app = express();
-
+ 
 // console.log(typeof BrandModel)
 app.use(express.json());
-app.use(cors());
+ 
+
 /*serves static assets*/
 app.use(express.static("public"));
 /* required to read data from post */
 app.use(express.urlencoded({ extended: false }));
+ 
+app.use(cors({
+    origin: 'http://localhost:3000'}));
+app.use(cookieParser());
+app.use('/influencer',Influencer);
+app.use("/", routerBlog);
+ 
 app.use('/offer' , offer)
 app.use('/api/signup', signupBrandRouter);
-
-app.use(cookieParser());
-app.use('/influencer',Influencer)
+ 
 app.use("/collab", routerCollab);
 app.use("/bprofile", routerBprofile);
 app.use("/link", routerLinks);
+ 
 app.get("/", (req, res) => {
 	console.log(req);
 	return res.status(234).send("Hello");

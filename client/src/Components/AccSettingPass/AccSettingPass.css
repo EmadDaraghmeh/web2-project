@@ -1,5 +1,5 @@
 
-  .account-settings {
+.account-settings {
     padding: 1rem;
     background-color: #ececec;
 }
@@ -41,16 +41,16 @@
     margin-bottom: 30px;
 }
  
-  @media (max-width: 768px) 
-  {
+@media (max-width: 768px) {
     .custom-card,
     .custom-card-1 {
         width: 100%;  
         margin-left: 0;  
         .card-body-1 {
-    padding: 1rem; 
+            padding: 1rem; 
+        }
+    }
 }
-  }}
 
 .btn.custom-button {
     width: 100%;  
