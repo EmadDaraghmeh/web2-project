@@ -5,6 +5,8 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const Influencer =require('../server/src/Controller/Influencer')
 const { PORT, mongoDBURL } = require("./config");
+const signupBrandRouter = require('./src/Controller/SignupBrand2');
+const offer = require('./src/Controller/Offerr')
 const app = express();
 
 // console.log(typeof BrandModel)
@@ -14,7 +16,8 @@ app.use(cors());
 app.use(express.static("public"));
 /* required to read data from post */
 app.use(express.urlencoded({ extended: false }));
-
+app.use('/api/signup', signupBrandRouter);
+app.use('/offer' , offer)
 app.use(cookieParser());
 app.use('/influencer',Influencer)
 app.get("/", (req, res) => {
