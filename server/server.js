@@ -14,11 +14,9 @@ const routerUsers = require("./src/Controller/UserRoutes");
 const signUpInfluencer = require("./src/Controller/SignUpInfluencerRouter");
 const routerOffers = require("./src/Controller/OfferRoutes");
 const app = express();
- 
+app.use(cors());
 // console.log(typeof BrandModel)
 app.use(express.json());
- 
-
 /*serves static assets*/
 app.use(express.static("public"));
 /* required to read data from post */
@@ -29,29 +27,26 @@ app.use("/api/signup", signupBrandRouter);
 
 app.use(cookieParser());
 app.use("/influencer", Influencer);
- 
-app.use(cors({
-    origin: 'http://localhost:3000'}));
+
 app.use(cookieParser());
 
 // app.use("/", routerBlog);
- 
 app.get("/", (req, res) => {
 	console.log(req);
 	return res.status(234).send("Hello");
 });
 
-app.use('/offer' , offer)
-app.use('/api/signup', signupBrandRouter);
- 
+app.use("/offer", offer);
+app.use("/api/signup", signupBrandRouter);
+
 app.use("/collab", routerCollab);
 app.use("/offers", routerOffers);
 app.use("/bprofile", routerBprofile);
 app.use("/link", routerLinks);
-app.use('/influencer',Influencer);
+app.use("/influencer", Influencer);
 
 app.use("/brands", routerBlog);
-app.use("/influencer", signUpInfluencer);
+app.use("/signUpInfluencer", signUpInfluencer);
 app.use("/users", routerUsers);
 app.get("*", (req, res) => {
 	console.log(req);

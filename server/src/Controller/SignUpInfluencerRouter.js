@@ -4,7 +4,7 @@ const User = require("../Model/User");
 
 const routerSignup = express.Router();
 
-routerSignup.post("/signup", async (req, res) => {
+routerSignup.post("/", async (req, res) => {
 	try {
 		const {
 			email,
@@ -46,10 +46,10 @@ routerSignup.post("/signup", async (req, res) => {
 		console.log(newUser);
 		await newUser.save();
 		console.log("New user registered:", newUser);
-		res.status(201).send("Registered Successfully");
+		res.status(200).json(newUser);
 	} catch (err) {
 		console.log(err);
-		res.status(500).send({ Message: err.message });
+		res.status(500).json({ Message: err.message });
 	}
 });
 
