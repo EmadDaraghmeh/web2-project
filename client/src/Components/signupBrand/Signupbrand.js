@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Signupbrand.css";
 import axios from "axios";
-import {  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signupbrand() {
     const [formData, setFormData] = useState({
@@ -9,22 +9,79 @@ function Signupbrand() {
     });
 
     const navigate = useNavigate();
-
+    const [errors, setErrors] = useState({});
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { id, value } = e.target;
+        setFormData({ ...formData,[id]: value,  });
+        validateInput(id, value);
     };
 
+    const validateInput = (id, value) => {
+		let error = { ...errors };
+
+		if (id === "userName") {
+			error.userName = value.trim() === "" ? "userName is required." : "";
+		} else if (id === "email") {
+			const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			error.email = !emailPattern.test(value)
+				? "Please enter a valid email address."
+				: "";
+		} else if (id === "password") {
+			error.password =
+				value.length < 8 ? "Password must be at least 8 characters long." : "";
+		} else if (id === "confirmPassword") {
+			error.confirmPassword =
+				value !== formData.password ? "Passwords do not match." : "";
+		} else if (id === "countryCode") {
+			error.countryCode =
+				value.trim() === "" ? "Country code is required." : "";
+		} else if (id === "phoneNumber") {
+			const phonePattern = /^[0-9]+$/;
+			error.phoneNumber = !phonePattern.test(value)
+				? "Please enter a valid phone number."
+				: "";
+		} else if (id === "price") {
+			error.price = value.trim() === "" ? "Price is required." : "";
+		} else if (id === "city") {
+			error.city = value.trim() === "" ? "City is required." : "";
+		} else if (id === "country") {
+			error.country = value.trim() === "" ? "Country is required." : "";
+		} else if (id === "zipCode") {
+			error.zip = value.trim() === "" ? "Please enter a valid zip code." : "";
+		} else if (id === "industry") {
+			error.industry = value.trim() === "" ? "Industry is required." : "";
+		}
+
+		setErrors(error);
+	};
     const handleSubmit = async (e) => {
         e.preventDefault();
+        let error = {};
+		let hasEmptyFields = false;
+		Object.keys(formData).forEach((key) => {
+			if (formData[key].trim() === "") {
+				error[key] = `${
+					key.charAt(0).toUpperCase() + key.slice(1)
+				} is required`;
+				hasEmptyFields = true;
+			}
+		});
+
+		setErrors(error);
+		if (hasEmptyFields) {
+			console.log("Form has errors. Please fix them.");
+		}
         if (formData.password !== formData.confirmPassword) {
             alert("Passwords do not match!");
             return;
         }
-
         try {
-            const response = await axios.post('http://localhost:4000/api/signup', formData);
-            console.log(response.data);
-            navigate('/brandsHomePage');
+             axios.post('http://localhost:4000/api/signup', formData)
+             .then((res) => {
+                console.log(res.data);
+                console.log("Form submitted successfully");
+                navigate('/brandsHomePage');
+            })
         } catch (error) {
             console.error(error.response.data);
         }
@@ -42,6 +99,7 @@ function Signupbrand() {
                         placeholder="Caramale / chocolate"
                         value={formData.userName}
                         onChange={handleChange}
+                        required
                     />
                 </div>
 
@@ -54,6 +112,7 @@ function Signupbrand() {
                         placeholder="Email address"
                         value={formData.email}
                         onChange={handleChange}
+                        required
                     />
                 </div>
 
@@ -67,6 +126,7 @@ function Signupbrand() {
                             placeholder="Password"
                             value={formData.password}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="col" id="Col44">
@@ -78,6 +138,7 @@ function Signupbrand() {
                             placeholder="Confirm Password"
                             value={formData.confirmPassword}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                 </div>
@@ -88,7 +149,7 @@ function Signupbrand() {
                         <select
                             name="countryCode"
                             className="form-select custom-select"
-                            value={formData.countryCode}
+                            value={formData.country}
                             onChange={handleChange}
                         >
                             <option value="+970">Ps(+970)</option>
@@ -106,6 +167,7 @@ function Signupbrand() {
                             placeholder="Phone number"
                             value={formData.phoneNumber}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                 </div>
@@ -120,17 +182,19 @@ function Signupbrand() {
                             placeholder="City"
                             value={formData.city}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="col" id="Col44">
-                        <label htmlFor="state">State</label>
+                        <label htmlFor="state">Price</label>
                         <input
                             type="text"
                             name="state"
                             className="form-control custom-input"
                             placeholder="State"
-                            value={formData.state}
+                            value={formData.price}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="col" id="Col44">
@@ -155,19 +219,7 @@ function Signupbrand() {
                         placeholder="Category"
                         value={formData.Category}
                         onChange={handleChange}
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="Thenumberoffollowerofcompany" className="form-label">
-                        The number of followers of the company
-                    </label>
-                    <input
-                        type="text"
-                        name="Thenumberoffollowerofcompany"
-                        className="form-control custom-input"
-                        placeholder="Number of followers"
-                        value={formData.Thenumberoffollowerofcompany}
-                        onChange={handleChange}
+                        required
                     />
                 </div>
 
@@ -189,7 +241,9 @@ function Signupbrand() {
                 </div>
                 <div className="form-buttons" id="Form-Buttons12">
                     <button type="button" className="btn back" id="Btnn1">Back</button>
-                    <button type="submit" className="btn confirm" id="Btnn2">Confirm</button>
+                    <Link className="confirm-brand" to="/brandsHomePage">
+                    <button type="submit" className="btn confirm" id="Btnn2" >Confirm</button>
+                    </Link>
                 </div>
             </form>
         </div>

@@ -26,8 +26,6 @@ import CollaborationSteps from "./Components/BusinessLandingPage/CollaborationSt
 import UpgradeCard from "./Components/BusinessLandingPage/UpgradeCard";
 import Finalone from "./Components/BusinessLandingPage/Finalone";
 import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
-
-
 import { AuthProvider } from "./Contexts/AuthContext";
 
 

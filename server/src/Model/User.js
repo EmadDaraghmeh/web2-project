@@ -29,7 +29,7 @@ const CreateAcc = new Schema({
 
   }, industry:{
     type: String,
-    required: true,
+    required: false,
   },
   price:{
     type: String,
@@ -57,7 +57,7 @@ const CreateAcc = new Schema({
   userRole: { 
     type: String,
     enum: ["brand", "influencer"],
-
+    default:'brand',
     required: true
    },
    socialMediaLinks: {

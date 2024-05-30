@@ -78,7 +78,6 @@ const SignUpInfluencer = () => {
 			console.log("Form has errors. Please fix them.");
 		} else {
 			console.log(formData);
-
 			axios
 				.post("http://localhost:4000/influencer/signup", formData)
 				.then((res) => {
