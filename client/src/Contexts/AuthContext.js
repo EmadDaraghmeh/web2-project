@@ -12,8 +12,7 @@ export const useAuth = () => {
 };
 export const AuthProvider = (props) => {
 	const [authUser, setAuthUser] = useState(null);
-	const [isLoggedIn, setIsLoggedIn] = useState(null);
-
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	// Save in local storage to refetch upon reloading a page
 	useEffect(() => {
 		if (localStorage.getItem("authUser")) {
@@ -26,6 +25,12 @@ export const AuthProvider = (props) => {
 		localStorage.setItem("authUser", JSON.stringify(authUser));
 	}, [authUser]);
 
+	useEffect(() => {
+		if (!isLoggedIn) {
+			localStorage.removeItem("authUser");
+			setAuthUser(null);
+		}
+	}, [isLoggedIn]);
 	const value = {
 		authUser,
 		setAuthUser,
