@@ -1,126 +1,17 @@
-#card1{
-    background-color:whitesmoke !important;
-        width: 350px !important;
-        height: 120px;
-        flex-wrap: wrap;
-        justify-content: center;
-        display:inline-flex;
-        margin-left: 15px;
-        margin-top: 10px;
-    border-radius: 20px;
-    border-color: #ff1b6d;
-    }
-    
-    
-    #card2{
-      background-color:whitesmoke !important;
-          width: 350px !important;
-          height: 120px;
-          flex-wrap: wrap;
-          justify-content: center;
-          display:inline-flex;
-          margin-left: 15px;
-          margin-top: 10px;
-      border-radius: 20px;
-      border-color: #ff1b6d;
-      }
-    
-      #card3{
-        background-color:whitesmoke !important;
-            width: 350px !important;
-            height: 120px;
-            flex-wrap: wrap;
-            justify-content: center;
-            display:inline-flex;
-            margin-left: 15px;
-            margin-top: 10px;
-        border-radius: 20px;
-        border-color: #ff1b6d;
-        }
-    
-        
-        #card4{
-          background-color:whitesmoke !important;
-              width: 350px !important;
-              height: 120px;
-              flex-wrap: wrap;
-              justify-content: center;
-              display:inline-flex;
-              margin-left: 15px;
-              margin-top: 10px;
-          border-radius: 20px;
-          border-color: #ff1b6d;
-          }
-    
-          #card5{
-            background-color:whitesmoke !important;
-                width: 350px !important;
-                height: 120px;
-                flex-wrap: wrap;
-                justify-content: center;
-                display:inline-flex;
-                margin-left: 15px;
-                margin-top: 10px;
-            border-radius: 20px;
-            border-color: #ff1b6d;
-            }
-    
-            #card6{
-              background-color:whitesmoke !important;
-                  width: 350px !important;
-                  height: 120px;
-                  flex-wrap: wrap;
-                  justify-content: center;
-                  display:inline-flex;
-                  margin-left: 15px;
-                  margin-top: 10px;
-              border-radius: 20px;
-              border-color: #ff1b6d;
-              }
-        
-          
-     .analysis{
-        display: flex;
-        /* flex-direction: row; */
-    } 
-    
-    #instagram{
-        color: #ff1b6d;
-        font-size: 25px;
-    }
-    
-    #twitter{
-      font-size: 25px;
-    }
-    #tiktok{
-      font-size: 25px;
-    }
-    #facebook{
-        color:blue;
-        font-size: 25px;
-    }
-    
-    #snapchat{
-        color:yellow;
-      font-size: 25px;
-    }
-    
-    #youtube{
-        color: red;
-       font-size: 25px;
-    }
+
     
     #description{
         border-color:white;
         background-color: white;
         height: 150px;
        width: 50%;
-       margin-left: 130px;
+      
      
     }
     #p{
       position: relative;
-      width: 350px;;
+      width: 350px;
+     
     }
 
     .container-icons{
@@ -128,73 +19,18 @@
       flex-wrap: wrap;
      
     }
-    #labell{
-        font-style: italic;
-        color: gray;
-    }
-    
-    #card-title1{
-        color:gray;
-        font-size:x-large;
-        font-style: italic;
-        margin-left: 15px;
-        
-    }
-    
-    #card-title2{
-      color:gray;
-      font-size:x-large;
-      font-style: italic;
-      margin-left: 15px;
-      
-     
-    }
-    #card-title3{
-      color:gray;
-      font-size:x-large;
-      font-style: italic;
-      margin-left: 15px;
-      
-     
-    }
-    #card-title4{
-      color:gray;
-      font-size:x-large;
-      font-style: italic;
-      margin-left: 15px;
-      
-     
-    }
-    #card-title5{
-      color:gray;
-      font-size:x-large;
-      font-style: italic;
-      margin-left: 15px;
-      
-     
-    }
-    #card-title6{
-      color: gray !important;
-      font-size:x-large;
-      font-style: italic;
-      margin-left: 15px;
-      
-     
-    }
-    
-    
-    
+   
+
     
     .boxx{
        
         display: flex;
         justify-content: flex-end;
         margin-top: -50px;
-        margin-left: -70px;
+      
         flex-wrap: wrap;
     }
     .container{
-      
       flex-wrap: wrap;
     }
     @media (max-width:768px) {
@@ -210,6 +46,7 @@
       #description p{
         width: 100%;
       }
+      
     }
     .Posts{
         font-style: italic;
@@ -242,27 +79,19 @@
         width:150px;
         border-radius: 10px;
         background-color: #ff1b6d;
-        margin-top: 5px;
+        margin-top: 15px;
         margin-left:40px;
     
     }
     
-    #btn2{
-       
-      width:150px;
-      border-radius: 10px;
-      background-color: #ff1b6d;
-      margin-top: 5px;
-      margin-left:40px;
-    
-    }
+   
     #btn3{
        
       width:150px;
       border-radius: 10px;
       background-color: #ff1b6d;
-      margin-top: 5px;
-      margin-left:40px;
+      margin-top: 15px;
+      margin-left:30px;
     
     }
     #btn4{
@@ -270,8 +99,8 @@
       width:150px;
       border-radius: 10px;
       background-color: #ff1b6d;
-      margin-top: 5px;
-      margin-left:40px;
+      margin-top: 10px;
+     
     
     }
     
@@ -279,12 +108,7 @@
       background-color:white !important;
       color:  #ff1b6d;
     }
-    
-    #btn2:hover{
-      background-color:white !important;
-    color:  #ff1b6d;
-    }
-    
+   
     #btn3:hover{
       background-color:white !important;
     color:  #ff1b6d;
@@ -312,10 +136,7 @@
         
     }
     
-    #social{
-        margin-block: auto;
-    }
-    
+   
     
     
     .btn-primary.btn-custom {
@@ -394,3 +215,92 @@
     
     
     
+
+      label {
+        font-style: italic;
+        color: gray;
+      }
+      
+      
+      
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+      
+      
+      
+      #btn1 {
+        width: 177px;
+        border-radius: 10px;
+        background-color: #ff1b6d;
+        margin-top: 5px;
+        margin-left: 1%;
+        margin-right: 1%;
+      }
+      
+      #btn2,
+      #btn3 {
+        width: 150px;
+        border-radius: 10px;
+        background-color: #ff1b6d;
+        margin-top: 5px;
+        margin-left: 1%;
+        margin-right: 1%;
+      }
+      
+      #btn1:hover,
+      #btn2:hover,
+      #btn3:hover {
+        background-color: palevioletred !important;
+      }
+      
+      
+      .modal-header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .modal-title {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .btn-close {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1051;
+      }
+      
+      #collaborationOfferModal .form-control,
+      #collaborationOfferModal .form-select {
+        border-color: #ff1b6d;
+      }
+      
+      #collaborationOfferModal .btn-primary {
+        background-color: #ff1b6d;
+        border-color: #ff1b6d;
+      }
+      
+      #collaborationOfferModal .btn-primary:hover {
+        background-color: #ff1b6d;
+        border-color: #ff1b6d;
+      }
+      
+      #collaborationOfferModal .form-control:focus,
+      #collaborationOfferModal .form-select:focus {
+        border-color: #ff1b6d;
+        box-shadow: 0 0 0 0.25rem rgba(219, 112, 147, 0.25);
+      }
+      
+      #collaborationOfferModal .form-check-input:focus,
+      #collaborationOfferModal .form-file-input:focus {
+        border-color: #ff1b6d;
+        box-shadow: 0 0 0 0.25rem rgba(219, 112, 147, 0.25);
+      }

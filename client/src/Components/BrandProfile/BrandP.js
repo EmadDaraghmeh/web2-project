@@ -1,19 +1,41 @@
 import React, { useState, useEffect } from "react";
 import "./BrandStyle.css";
-import image from "../Image/pink.png";
-import image2 from "../Image/Ellipse 1.png";
+import image2 from "../Image/image2.jpg";
 import exampleCarouselImage from "../Image/blue.png";
 import exampleCarouselImage2 from "../Image/pink.png";
 import exampleCarouselImage3 from "../Image/yellow.png";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { useParams } from "react-router-dom";
 
 const BrandP = () => {
   const [showModal, setShowModal] = useState(false);
+  const [brand, setBrand] = useState({});
   const [platform, setPlatform] = useState("");
   const [terms, setTerms] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [price, setPrice] = useState("");
+  const { id, influencerId } = useParams();
+
+  useEffect(() => {
+    const fetchBrand = async () => {
+      try {
+        const response = await fetch(`http://localhost:4000/bprofile/${id}`);
+        if (!response.ok) {
+          throw new Error("fail to fetch brand data");
+        }
+        const data = await response.json();
+        setBrand(data);
+        console.log("fetched brand data:", data);
+      } catch (error) {
+        console.error("error fetching brand data:", error);
+      }
+    };
+
+    if (id) {
+      fetchBrand();
+    }
+  }, [id]);
 
   useEffect(() => {
     if (showModal) {
@@ -36,22 +58,54 @@ const BrandP = () => {
     }
   }, [showModal]);
 
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/collab", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          terms,
+          platform,
+          date: new Date().toISOString(),
+          startDate,
+          endDate,
+          price,
+          influencerId,
+          brandId: id,
+          state: "ongoing",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      console.log("collaboration created:", data);
+      alert("offer sent successfully");
+      setShowModal(false);
+    } catch (error) {
+      console.error("error submitting collaboration offer:", error);
+    }
+  };
+
+
   return (
     <div>
       <div>
-        <img src={image} id="thumbnail1" alt="" />
-        <img src={image2} id="thumbnail2" alt="" />
+        <img src={brand.cover || ""} id="thumbnail1" alt="" />
+        <img src={brand.picture || image2} id="thumbnail2" alt="" />
         <div className="textbox">
-          <h3>NAME</h3>
+          <h3>{brand.userName || "NAME"}</h3>
         </div>
       </div>
       <div className="boxxx">
         <div className="card" id="description">
           <div className="card-body">
             <label htmlFor="floatingInput">Description: </label>
-            <p>
-              ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-            </p>
+            <p>{brand.description || ""}</p>
           </div>
         </div>
 
@@ -153,26 +207,56 @@ const BrandP = () => {
         </div>
         <br></br>
         <hr />
-        <h3 className="links-title">Social Media Links</h3>
+        <h3 className="links-title">Social Media</h3>
         <br></br>
         <div className="social-buttons" id="social-b">
           <button className="btn btn-custom btn-instagram" id="b-instagram">
             <i className="bi bi-instagram"></i>
+            <a
+              href={brand.socialMedia?.instagram || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-facebook" id="b-facebook">
             <i className="bi bi-facebook"></i>
+            <a
+              href={brand.socialMedia?.facebook || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-tiktok" id="b-tiktok">
             <i className="bi bi-tiktok"></i>
+            <a
+              href={brand.socialMedia?.tiktok || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-snapchat" id="b-snapchat">
             <i className="bi bi-snapchat"></i>
+            <a
+              href={brand.socialMedia?.snapchat || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-youtube" id="b-youtube">
             <i className="bi bi-youtube"></i>
+            <a
+              href={brand.socialMedia?.youtube || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
           <button className="btn btn-custom btn-x" id="b-x">
             <i className="bi bi-twitter-x"></i>
+            <a
+              href={brand.socialMedia?.x || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
           </button>
         </div>
       </div>
@@ -210,12 +294,12 @@ const BrandP = () => {
                   onChange={(e) => setPlatform(e.target.value)}
                 >
                   <option value="">Choose</option>
-                  <option value="1">Instagram</option>
-                  <option value="2">Facebook</option>
-                  <option value="3">TikTok</option>
-                  <option value="4">Snapchat</option>
-                  <option value="5">YouTube</option>
-                  <option value="6">X</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="TikTok">TikTok</option>
+                  <option value="Snapchat">Snapchat</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="X">X</option>
                 </select>
               </div>
               <div className="mb-3">
@@ -261,21 +345,21 @@ const BrandP = () => {
                 </div>
               </div>
               <div className="mb-3">
-                <label htmlFor="floatingSelectPrice" className="form-label">
+                <label htmlFor="floatingInputPrice" className="form-label">
                   Price:
                 </label>
-                <select
-                  className="form-select"
-                  id="floatingSelectPrice"
-                  aria-label="Choose price"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                >
-                  <option value="">$</option>
-                  <option value="1">Price One</option>
-                  <option value="2">Price Two</option>
-                  <option value="3">Price Three</option>
-                </select>
+                <div className="form-floating">
+                  <input
+                    name="Price"
+                    type="text"
+                    className="form-control"
+                    id="floatingInputPrice"
+                    placeholder="Enter price"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                  />
+                  <label htmlFor="floatingInputPrice">Enter price</label>
+                </div>
               </div>
             </div>
             <div className="modal-footer">
@@ -286,7 +370,11 @@ const BrandP = () => {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handleSubmit}
+              >
                 Send
               </button>
             </div>
