@@ -3,6 +3,7 @@ import'./DetailsCard.css'
 const CardD = (props) => {
   return (
     <>
+     <Link to={"/Brand/ProfilePage"}>
     <div className="brand-card">
       <h1>{props.city}</h1>
       <img src={props.logo} alt='...'/>
@@ -42,7 +43,9 @@ const CardD = (props) => {
         
       </div>
     </div>
+    </Link>
     </>
+    
   )
 }
 

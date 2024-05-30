@@ -27,8 +27,7 @@ router.get('/:id', async (req, res) => {
         res.status(500).send({ error: error.message });
     }
 });
-// In your Express route handler
-app.get('/influencer', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const { platform } = req.query;
         let query = {};
