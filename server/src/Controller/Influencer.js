@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Influencer = require('../Model/Influencer');
+const Influencer = require('../Model/User');
 
 
 
@@ -27,20 +27,5 @@ router.get('/:id', async (req, res) => {
         res.status(500).send({ error: error.message });
     }
 });
-router.get('/', async (req, res) => {
-    try {
-        const { platform } = req.query;
-        let query = {};
-        if (platform) {
-            query['platform.type'] = { $in: platform };
-        }
-        const influencers = await Influencer.find(query);
-        res.json(influencers);
-    } catch (error) {
-        res.status(500).send(error);
-    }
-});
-
-
 module.exports = router;
 

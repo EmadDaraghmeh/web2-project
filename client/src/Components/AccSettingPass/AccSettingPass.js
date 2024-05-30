@@ -1,7 +1,7 @@
 import React, {   useState } from "react";
 import "./AccSettingPass.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import {  Link, useNavigate } from "react-router-dom";
+import {  Link, useNavigate ,useParams} from "react-router-dom";
 import axios from 'axios';
 
 const AccSettingPass = () => {

@@ -26,7 +26,7 @@ import CollaborationSteps from "./Components/BusinessLandingPage/CollaborationSt
 import UpgradeCard from "./Components/BusinessLandingPage/UpgradeCard";
 import Finalone from "./Components/BusinessLandingPage/Finalone";
 import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
-import SideBar from "./Components/BrandDiscovery/SideBar";
+
 
 function App() {
 	return (
@@ -219,7 +219,6 @@ function App() {
 							<div>
 								<InfluencerNavbar />
 								<div className="sidebar">
-									<SideBar />
 									<SearchBrand />
 								</div>
 								<Footer />

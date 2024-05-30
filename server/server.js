@@ -25,20 +25,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors({
     origin: 'http://localhost:3000'}));
 app.use(cookieParser());
-app.use('/influencer',Influencer);
-app.use("/", routerBlog);
+
+// app.use("/", routerBlog);
  
+app.get("/", (req, res) => {
+	console.log(req);
+	return res.status(234).send("Hello");
+});
+
 app.use('/offer' , offer)
 app.use('/api/signup', signupBrandRouter);
  
 app.use("/collab", routerCollab);
 app.use("/bprofile", routerBprofile);
 app.use("/link", routerLinks);
- 
-app.get("/", (req, res) => {
-	console.log(req);
-	return res.status(234).send("Hello");
-});
+app.use('/influencer',Influencer);
 
 app.use("/brands", routerBlog);
 app.get("*", (req, res) => {
