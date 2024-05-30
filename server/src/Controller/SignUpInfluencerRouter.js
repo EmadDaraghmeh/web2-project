@@ -1,6 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const User = require('./src/Model/User'); 
+const User = require('../Model/User'); 
 
 const routerSignup = express.Router();
 
@@ -42,7 +42,5 @@ routerSignup.post('/SignUpInfluencer', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is started on port ${port}`);
-});
+
  module.exports=routerSignup;

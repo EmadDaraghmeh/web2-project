@@ -8,23 +8,24 @@ import MainLandingPage from "./Components/MainLandingPage/MainLandingPage";
 import Footer from "./Components/Footer/Footer";
 import DeleteAccountForm from "./Components/DeleteAccountSettings/DeleteAccountForm";
 import InfluenBlend from "./Components/AboutPage/InfluenBlend";
-import SignUpInfluencer from "./Components/SignUpInfluencer/SignUpInfluencer";
+// import SignUpInfluencer from "./Components/SignUpInfluencer/SignUpInfluencer";
 import SignUp from "./Components/SignUp2/SignUp";
 import InfluencerHome from "./Components/loadingBrandPage/InfluencerHome";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import Blog from "./Components/BlogPage/Blog";
+import BlogPost from "./Components/BlogPostPage/BlogPost";
 import Signupbrand from "./Components/signupBrand/Signupbrand";
-import Banner from "./Components/BusinessLandingPage/Banner";
-import All from "./Components/InfluencerDiscovery/all";
+import Banner from "./Components/Business_landing_page/Banner";
+import All from "./Components/Influencer_discovery/all";
 import BrandsNavbar from "./Components/Navbars/BrandsNavbar";
 import InfluencerNavbar from "./Components/Navbars/InfluencerNavbar";
 import BrandP from "./Components/BrandProfile/BrandP";
 import Offers from "./Components/Offers/Offers";
-import ChoosePlatform from "./Components/BusinessLandingPage/ChoosePlatform";
-import Collaborate from "./Components/BusinessLandingPage/Collaborate";
-import CollaborationSteps from "./Components/BusinessLandingPage/CollaborationSteps";
-import UpgradeCard from "./Components/BusinessLandingPage/UpgradeCard";
-import Finalone from "./Components/BusinessLandingPage/Finalone";
+import ChoosePlatform from "./Components/Business_landing_page/ChoosePlatform";
+import Collaborate from "./Components/Business_landing_page/Collaborate";
+import CollaborationSteps from "./Components/Business_landing_page/CollaborationSteps";
+import UpgradeCard from "./Components/Business_landing_page/UpgradeCard";
+import Finalone from "./Components/Business_landing_page/Finalone";
 import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
 import SideBar from "./Components/BrandDiscovery/SideBar";
 
@@ -68,7 +69,7 @@ function App() {
 							</div>
 						}
 					/>
-					<Route path="/InfluencerSignUp" element={<SignUpInfluencer />} />
+					{/* <Route path="/InfluencerSignUp" element={<SignUpInfluencer />} /> */}
 					<Route path="/BrandSignUp" element={<Signupbrand />} />
 					<Route
 						path="/Home"
@@ -118,6 +119,17 @@ function App() {
 							</div>
 						}
 					/>
+
+					<Route
+					 path="/BlogPost"
+					element={
+                    <div>
+                    <HomeNavbar/><BlogPost/>
+					<Footer/>
+					</div>
+					}
+					/>
+
 					<Route
 						path="/Blog/Influencers"
 						element={
