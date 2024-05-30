@@ -1,28 +1,43 @@
 const express = require('express');
-const ContactUss = require('./src/Model/ContactUsBack'); 
+const ContactUss = require('../Model/ContactUsBack'); 
+const nodemailer=require('nodemailer');
 
 const routerContactUs = express.Router();
  
-routerContactUs.post('/ContactUs', async (req, res) => {
+const transporter = nodemailer.createTransport({
+    host:'smtp.gmail.com',
+    port: 587,
+    secure: false, 
+    auth: {
+        user:'influenblend7@gmail.com',
+        pass: 'gxhl dfsr pcrh nlzb',
+    }
+});
+
+
+routerContactUs.post('/', async (req, res) => {
     try {
         const {
-            email, firstName, lastName,message
+           E_mail,
+            F_name,
+             L_name,
+             message
         } = req.body;
 
         const newMessage = new ContactUss({
-            email,
-            firstName,
-            lastName,
+            email  : E_mail,
+            firstName:F_name,
+            lastName: L_name,
            message
         });
         await newMessage.save();
 
 
         let mailOptions = {
-            from: email,
+            from: E_mail,
             to: 'influenblend7@gmail.com',
-            text: `You have received a new message from ${firstName} ${lastName}(${email}):\nMessage: ${message}`,
-            html: `<b>You have received a new message from ${firstName} ${lastName}(${email}):</b><br><b>Message:</b> ${message}`
+            text: `You have received a new message from ${F_name} ${L_name}(${E_mail}):\nMessage: ${message}`,
+            html: `<b>You have received a new message from ${F_name} ${L_name}(${E_mail}):</b><br><b>Message:</b> ${message}`
         };
         try {
             const info = await transporter.sendMail(mailOptions);
@@ -40,4 +55,5 @@ routerContactUs.post('/ContactUs', async (req, res) => {
         res.status(500).send({ Message: err.message });
     }
 });
+
  module.exports=routerContactUs;
