@@ -29,6 +29,7 @@ const SearchBar = ({ influencers, onSearch }) => {
   };
 
   const sortResults = (data) => {
+   
     switch (selectedSort) {
       case 'newest':
         return data.sort((a, b) => new Date(b.joinedDate) - new Date(a.joinedDate));

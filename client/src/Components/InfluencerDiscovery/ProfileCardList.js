@@ -2,9 +2,10 @@
 import React from 'react';
 import './ProfileCardList.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Link } from "react-router-dom";
 const ProfileCardList = ({ influencers }) => {
   return (
+    <Link to={"/influencer/ProfilePage"}>
     <div className="cont">
       <div className="row">
         {influencers?.map(influencer => (
@@ -21,14 +22,14 @@ const ProfileCardList = ({ influencers }) => {
                 <img src={influencer?.profilePhoto} alt={influencer?.firstName} className="profile-image" id="piiii"/>
                 <div className="profile-info" id="PRINFOO">
                   <p className="profile-role" id="PROFLRR">
-                    <span className="influencer-name" id="INNAMF">{influencer?.firstName} {influencer?.lastName}</span>
+                   <span className="influencer-name" id="INNAMF">{influencer?.firstName} {influencer?.lastName}</span>
                     <span className="influencer-type" id="INFFTA">| {influencer?.type}</span>
                     <span className="influencer-category" id="INFCAT">| {influencer?.category}</span>
                   </p>
                 </div>
               </div>
               <div className="social-media">
-                {Object.entries(influencer?.socialMedia || {}).map(([platform, details]) => (
+                {Object.entries(influencer.socialMedia || {}).map(([platform, details]) => (
                   <div key={details._id} className={`social-icon ${platform}`}>
                     <span>{details.numberOfFollowers}</span>
                     {platform === 'facebook' && (
@@ -73,6 +74,7 @@ const ProfileCardList = ({ influencers }) => {
         ))}
       </div>
     </div>
+    </Link>
   );
 };
 

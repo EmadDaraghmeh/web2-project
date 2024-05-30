@@ -14,23 +14,36 @@ const routerUsers = require("./src/Controller/UserRoutes");
 const signUpInfluencer = require("./src/Controller/SignUpInfluencerRouter");
 const routerOffers = require("./src/Controller/OfferRoutes");
 const app = express();
-
+ 
 // console.log(typeof BrandModel)
 app.use(express.json());
-app.use(cors());
+ 
+
 /*serves static assets*/
 app.use(express.static("public"));
 /* required to read data from post */
 app.use(express.urlencoded({ extended: false }));
+
 app.use("/offers", offer);
 app.use("/api/signup", signupBrandRouter);
 
 app.use(cookieParser());
 app.use("/influencer", Influencer);
+ 
+app.use(cors({
+    origin: 'http://localhost:3000'}));
+app.use(cookieParser());
+app.use('/influencer',Influencer);
+app.use("/", routerBlog);
+ 
+app.use('/offer' , offer)
+app.use('/api/signup', signupBrandRouter);
+ 
 app.use("/collab", routerCollab);
 app.use("/offers", routerOffers);
 app.use("/bprofile", routerBprofile);
 app.use("/link", routerLinks);
+ 
 app.get("/", (req, res) => {
 	console.log(req);
 	return res.status(234).send("Hello");

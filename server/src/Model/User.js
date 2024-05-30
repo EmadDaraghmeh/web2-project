@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-
 const { Schema } = mongoose;
+const validator = require("validator");
 
 
 const CreateAcc = new Schema({
@@ -8,18 +8,26 @@ const CreateAcc = new Schema({
     type: String,
     required: true,
     unique: true },
+
   email: {
     type: String,
     required: true,
     trim: true,
     isLowercase: true,
 
-
-  }, industry:{
+  },
+  phoneNumber: {
     type: String,
     required: true,
-  }
-  ,countryCode:{
+    validate(value) {
+      if (!validator.isMobilePhone(value)) {
+        throw new Error("Phonr number is invalid");
+      }
+    },
+
+
+
+  }, industry:{
     type: String,
     required: true,
   },
@@ -27,11 +35,7 @@ const CreateAcc = new Schema({
     type: String,
     required: true,
   },
-  phoneNumber: {
-    type: String,
-    required: true,
 
-  },
   country: {
     type: String,
     required: true,
@@ -48,31 +52,24 @@ const CreateAcc = new Schema({
     type: String,
     required: true,
     trim: true,
-    minlength: 8,
-
+    minlength: 8
   },
   userRole: { 
     type: String,
     enum: ["brand", "influencer"],
-     required: true ,
-    default:"brand"
-  },socialMedia: {
-    instagram: { type: String, required: false },
-    facebook: { type: String, required: false },
-    tiktok: { type: String, required: false },
-    youtube: { type: String, required: false },
-    snapchat: { type: String, required: false },
-    x: { type: String, required: false },},
-    picture:{
-      type: String,
-      required:false
-    }, cover:{
-      type: String,
-      required:false
-    },description:{
-      type: String,
-      required:false
-    }
+
+    required: true
+   },
+   socialMediaLinks: {
+    instagram: { type: String },
+    facebook: { type: String },
+    tiktok: { type: String },
+    twitter: { type: String },
+    youtube: { type: String },
+    snapchat: { type: String },
+    
+},
+
 });
 
 const User = mongoose.model("users", CreateAcc);

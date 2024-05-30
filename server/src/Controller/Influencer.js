@@ -25,6 +25,7 @@ router.get("/:id", async (req, res) => {
 		res.status(500).send({ error: error.message });
 	}
 });
+
 // In your Express route handler
 router.get("/influencer", async (req, res) => {
 	try {
@@ -38,6 +39,19 @@ router.get("/influencer", async (req, res) => {
 	} catch (error) {
 		res.status(500).send(error);
 	}
+
+router.get('/', async (req, res) => {
+    try {
+        const { platform } = req.query;
+        let query = {};
+        if (platform) {
+            query['platform.type'] = { $in: platform };
+        }
+        const influencers = await Influencer.find(query);
+        res.json(influencers);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 });
 
 module.exports = router;
