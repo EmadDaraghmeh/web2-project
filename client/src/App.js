@@ -26,8 +26,10 @@ import CollaborationSteps from "./Components/BusinessLandingPage/CollaborationSt
 import UpgradeCard from "./Components/BusinessLandingPage/UpgradeCard";
 import Finalone from "./Components/BusinessLandingPage/Finalone";
 import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
-import SideBar from "./Components/BrandDiscovery/SideBar";
+
+
 import { AuthProvider } from "./Contexts/AuthContext";
+
 
 function App() {
 	return (
@@ -195,6 +197,7 @@ function App() {
 						}
 					/> */}
 
+
 						<Route
 							path="/BrandOffers"
 							element={
@@ -202,6 +205,7 @@ function App() {
 									<BrandsNavbar />
 									<Offers />
 									<Footer />
+
 								</div>
 							}
 						/>

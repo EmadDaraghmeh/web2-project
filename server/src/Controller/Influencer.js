@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Influencer = require("../Model/Influencer");
+
+const Influencer = require('../Model/User');
+
 
 router.get("/", async (req, res) => {
 	try {
@@ -26,32 +28,5 @@ router.get("/:id", async (req, res) => {
 	}
 });
 
-// In your Express route handler
-router.get("/influencer", async (req, res) => {
-	try {
-		const { platform } = req.query;
-		let query = {};
-		if (platform) {
-			query["platform.type"] = { $in: platform };
-		}
-		const influencers = await Influencer.find(query);
-		res.json(influencers);
-	} catch (error) {
-		res.status(500).send(error);
-	}
-
-router.get('/', async (req, res) => {
-    try {
-        const { platform } = req.query;
-        let query = {};
-        if (platform) {
-            query['platform.type'] = { $in: platform };
-        }
-        const influencers = await Influencer.find(query);
-        res.json(influencers);
-    } catch (error) {
-        res.status(500).send(error);
-    }
-});
 
 module.exports = router;
