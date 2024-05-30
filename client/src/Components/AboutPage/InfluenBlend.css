@@ -117,6 +117,9 @@
   text-transform: uppercase;
   color: #FFFFFF;
 }
+.join-as-brand-link{
+  text-decoration: none;
+}
   #creator-button-about { 
     border-radius: 30px;
     background: #FF1B6D;
@@ -140,6 +143,10 @@
 
 
   }
+  .join-as-creator-link{
+    text-decoration: none;
+  }
+  
   #we-help-creator-about{
     font-size:20px;
     font-weight: bold;
