@@ -69,7 +69,7 @@ const InfluenceProfilePage = () => {
           endDate,
           price,
           influencerId:id,
-          brandId: "605c72ef5947c544d2f7cdbb",
+          brandId,
           state: "pending",
         }),
       });
