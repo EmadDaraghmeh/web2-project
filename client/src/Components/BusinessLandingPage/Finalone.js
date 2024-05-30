@@ -1,6 +1,6 @@
 import React from "react";
 import "./Finalone.css";
-
+import { Link } from "react-router-dom";
 const Final = () => {
 	return (
 		<div className="Finalone-container">
@@ -12,8 +12,8 @@ const Final = () => {
 				</p>
 			</div>
 			<button className="Finalone-button">
-				{" "}
-				WRITE TO US{" "}
+			<Link to={"/ContactUs/Influencer"}>{" "}
+				WRITE TO US{" "}</Link>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="16"
