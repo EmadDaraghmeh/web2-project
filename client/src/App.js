@@ -27,162 +27,164 @@ import UpgradeCard from "./Components/BusinessLandingPage/UpgradeCard";
 import Finalone from "./Components/BusinessLandingPage/Finalone";
 import SearchBrand from "./Components/BrandDiscovery/SearchBrand";
 import SideBar from "./Components/BrandDiscovery/SideBar";
+import { AuthProvider } from "./Contexts/AuthContext";
 
 function App() {
 	return (
-		<div className="app">
-			<BrowserRouter>
-				<Routes>
-					<Route
-						path="/"
-						element={
-							<div>
-								<HomeNavbar /> <MainLandingPage /> <Footer />{" "}
-							</div>
-						}
-					/>
-					<Route
-						path="/AboutUs"
-						element={
-							<div>
-								<HomeNavbar /> <InfluenBlend />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/AboutUs/Brands"
-						element={
-							<div>
-								<BrandsNavbar /> <InfluenBlend />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/AboutUs/Influencers"
-						element={
-							<div>
-								<InfluencerNavbar /> <InfluenBlend />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route path="/InfluencerSignUp" element={<SignUpInfluencer />} />
-					<Route path="/BrandSignUp" element={<Signupbrand />} />
-					<Route
-						path="/Home"
-						element={
-							<div>
-								<HomeNavbar /> <MainLandingPage />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/ContactUs"
-						element={
-							<div>
-								<HomeNavbar />
-								<ContactUs />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/ContactUs/Influencer"
-						element={
-							<div>
-								<InfluencerNavbar />
-								<ContactUs />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/ContactUs/Brand"
-						element={
-							<div>
-								<BrandsNavbar />
-								<ContactUs />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/Blog"
-						element={
-							<div>
-								<HomeNavbar /> <Blog />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/Blog/Influencers"
-						element={
-							<div>
-								<InfluencerNavbar /> <Blog />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/Blog/Brands"
-						element={
-							<div>
-								<BrandsNavbar /> <Blog />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/brandsHomePage"
-						element={
-							<div>
-								<BrandsNavbar />
-								<Banner />
-								<Collaborate />
-								<ChoosePlatform />
-								<CollaborationSteps />
-								<UpgradeCard />
-								<Finalone />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/all"
-						element={
-							<div>
-								<BrandsNavbar />
-								<All />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route path="/Brand/ProfilePage" element={<BrandP />} />
-					<Route
-						path="/InfluencerHome"
-						element={
-							<div>
-								<InfluencerNavbar />
-								<InfluencerHome />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/AccountSettings"
-						element={
-							<div>
-								<InfluencerNavbar />
-								<AccountSettings />
-								<Footer />
-							</div>
-						}
-					/>
-					{/* <Route
+		<AuthProvider>
+			<div className="app">
+				<BrowserRouter>
+					<Routes>
+						<Route
+							path="/"
+							element={
+								<div>
+									<HomeNavbar /> <MainLandingPage /> <Footer />{" "}
+								</div>
+							}
+						/>
+						<Route
+							path="/AboutUs"
+							element={
+								<div>
+									<HomeNavbar /> <InfluenBlend />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/AboutUs/Brands"
+							element={
+								<div>
+									<BrandsNavbar /> <InfluenBlend />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/AboutUs/Influencers"
+							element={
+								<div>
+									<InfluencerNavbar /> <InfluenBlend />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route path="/InfluencerSignUp" element={<SignUpInfluencer />} />
+						<Route path="/BrandSignUp" element={<Signupbrand />} />
+						<Route
+							path="/Home"
+							element={
+								<div>
+									<HomeNavbar /> <MainLandingPage />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/ContactUs"
+							element={
+								<div>
+									<HomeNavbar />
+									<ContactUs />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/ContactUs/Influencer"
+							element={
+								<div>
+									<InfluencerNavbar />
+									<ContactUs />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/ContactUs/Brand"
+							element={
+								<div>
+									<BrandsNavbar />
+									<ContactUs />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/Blog"
+							element={
+								<div>
+									<HomeNavbar /> <Blog />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/Blog/Influencers"
+							element={
+								<div>
+									<InfluencerNavbar /> <Blog />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/Blog/Brands"
+							element={
+								<div>
+									<BrandsNavbar /> <Blog />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/brandsHomePage"
+							element={
+								<div>
+									<BrandsNavbar />
+									<Banner />
+									<Collaborate />
+									<ChoosePlatform />
+									<CollaborationSteps />
+									<UpgradeCard />
+									<Finalone />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/all"
+							element={
+								<div>
+									<BrandsNavbar />
+									<All />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route path="/Brand/ProfilePage" element={<BrandP />} />
+						<Route
+							path="/InfluencerHome"
+							element={
+								<div>
+									<InfluencerNavbar />
+									<InfluencerHome />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/AccountSettings"
+							element={
+								<div>
+									<InfluencerNavbar />
+									<AccountSettings />
+									<Footer />
+								</div>
+							}
+						/>
+						{/* <Route
 						path="/BrandAccountSettings"
 						element={
 							<div>
@@ -193,64 +195,65 @@ function App() {
 						}
 					/> */}
 
-					<Route
-						path="/BrandOffers"
-						element={
-							<div>
-								<BrandsNavbar />
-								<Offers />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/InfluencerOffers"
-						element={
-							<div>
-								<InfluencerNavbar />
-								<Offers />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/exploreBrands"
-						element={
-							<div>
-								<InfluencerNavbar />
-								<div className="sidebar">
-									<SideBar />
-									<SearchBrand />
+						<Route
+							path="/BrandOffers"
+							element={
+								<div>
+									<BrandsNavbar />
+									<Offers />
+									<Footer />
 								</div>
-								<Footer />
-							</div>
-						}
-					/>
-					<Route path="/SignUp" element={<SignUp />} />
-					<Route
-						path="/AccSettingPass"
-						element={
-							<div>
-								<InfluencerNavbar />
-								<AccSettingPass />
-								<Footer />
-							</div>
-						}
-					/>
-					<Route
-						path="/DeleteAccount"
-						element={
-							<div>
-								<InfluencerNavbar />
-								<DeleteAccountForm />
-								<Footer />
-							</div>
-						}
-					/>
-				</Routes>
-			</BrowserRouter>
-			{/* <SignPopup /> */}
-		</div>
+							}
+						/>
+						<Route
+							path="/InfluencerOffers"
+							element={
+								<div>
+									<InfluencerNavbar />
+									<Offers />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/exploreBrands"
+							element={
+								<div>
+									<InfluencerNavbar />
+									<div className="sidebar">
+										<SideBar />
+										<SearchBrand />
+									</div>
+									<Footer />
+								</div>
+							}
+						/>
+						<Route path="/SignUp" element={<SignUp />} />
+						<Route
+							path="/AccSettingPass"
+							element={
+								<div>
+									<InfluencerNavbar />
+									<AccSettingPass />
+									<Footer />
+								</div>
+							}
+						/>
+						<Route
+							path="/DeleteAccount"
+							element={
+								<div>
+									<InfluencerNavbar />
+									<DeleteAccountForm />
+									<Footer />
+								</div>
+							}
+						/>
+					</Routes>
+				</BrowserRouter>
+				{/* <SignPopup /> */}
+			</div>
+		</AuthProvider>
 	);
 }
 

@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
       price,
       influencerId: new ObjectId(influencerId),
       brandId: new ObjectId(brandId),
-      state: req.body.state || 'pending',
+      state: req.body.state || 'ongoing',
     };
 
     const collabs = await brandC.create(newCollab);

@@ -1,14 +1,28 @@
 import React, { useState } from "react";
 import "./OffersForm.css";
+import axios from "axios";
+import { useAuth } from "../../Contexts/AuthContext";
 
-const OffersForm = ({ toggleVisibility }) => {
+const OffersForm = ({
+	toggleVisibility,
+	offerId,
+	platform,
+	terms,
+	startDate,
+	endDate,
+	price,
+	state,
+	sentBy,
+	onUpdate,
+}) => {
+	const { authUser } = useAuth();
 	const [isEditable, setIsEditable] = useState(false);
 	const [formData, setFormData] = useState({
-		platform: "Platform",
-		terms: "Terms",
-		startDate: "2023-01-01",
-		endDate: "2023-12-31",
-		price: "1000",
+		platform: platform,
+		terms: terms,
+		startDate: startDate,
+		endDate: endDate,
+		price: price,
 	});
 
 	const [originalData, setOriginalData] = useState({});
@@ -18,6 +32,22 @@ const OffersForm = ({ toggleVisibility }) => {
 		setIsEditable(true);
 	};
 
+	const editOfferDetails = (status) => {
+		const reqBody = {
+			...formData,
+			state: status,
+			sentBy: status === "ongoing" ? authUser._id : sentBy,
+		};
+		console.log("sending req body = ", reqBody);
+		axios
+			.put(`http://localhost:4000/offers/${offerId}`, reqBody)
+			.then((res) => {
+				onUpdate();
+			})
+			.catch((e) => {
+				console.log("Error occurred while editing an offer", e);
+			});
+	};
 	const handleBack = () => {
 		setFormData(originalData);
 		setIsEditable(false);
@@ -98,22 +128,43 @@ const OffersForm = ({ toggleVisibility }) => {
 						onChange={handleChange}
 						readOnly={!isEditable}
 					/>
-					{!isEditable ? (
-						<>
-							<button id="declineButton">Decline</button>
-							<button className="blueButtons" onClick={handleEdit}>
-								Edit
-							</button>
-							<button className="blueButtons">Accept</button>
-						</>
-					) : (
-						<>
-							<button className="blueButtons" onClick={handleBack}>
-								Back
-							</button>
-							<button className="blueButtons">Send</button>
-						</>
-					)}
+					{state === "ongoing" && sentBy !== authUser._id ? (
+						!isEditable ? (
+							<>
+								<button
+									id="declineButton"
+									onClick={() => {
+										editOfferDetails("declined");
+									}}
+								>
+									Decline
+								</button>
+								<button className="blueButtons" onClick={handleEdit}>
+									Edit
+								</button>
+								<button
+									className="blueButtons"
+									onClick={() => {
+										editOfferDetails("accepted");
+									}}
+								>
+									Accept
+								</button>
+							</>
+						) : (
+							<>
+								<button className="blueButtons" onClick={handleBack}>
+									Back
+								</button>
+								<button
+									className="blueButtons"
+									onClick={() => editOfferDetails("ongoing")}
+								>
+									Send
+								</button>
+							</>
+						)
+					) : null}
 				</div>
 			</div>
 		</div>
