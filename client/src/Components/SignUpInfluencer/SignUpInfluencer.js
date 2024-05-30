@@ -5,7 +5,7 @@ import "./SignUpInfluencer.css";
 import { useAuth } from "../../Contexts/AuthContext";
 
 const SignUpInfluencer = () => {
-	const { setAuthUser } = useAuth();
+	const { setAuthUser, setIsLoggedIn } = useAuth();
 	const [formData, setFormData] = useState({
 		userRole: "influencer",
 	});
@@ -84,6 +84,7 @@ const SignUpInfluencer = () => {
 				.then((res) => {
 					console.log("Form submitted successfully");
 					setAuthUser(res.data);
+					setIsLoggedIn(true);
 					navigate("/SignUp");
 				})
 				.catch((err) => {
