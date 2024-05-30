@@ -2,7 +2,7 @@ import React from "react";
 import "./Offers.css";
 import { useState } from "react";
 import OffersForm from "../MainLandingPage/OffersForm";
-import restaurantImage from "../img/Screenshot 2024-04-26 191047.png";
+import restaurantImage from "../Image/Screenshot 2024-04-26 191047.png";
 
 function OfferCard() {
 	const [isVisible, setIsVisible] = useState(false);

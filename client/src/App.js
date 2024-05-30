@@ -219,6 +219,7 @@ function App() {
 							<div>
 								<InfluencerNavbar />
 								<div className="sidebar">
+
 									<SearchBrand />
 								</div>
 								<Footer />
